@@ -1,0 +1,5470 @@
+{
+  "$schema": "./templates.schema.json",
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "work",
+      "label": "Work & projects",
+      "icon": "briefcaseOutline"
+    },
+    {
+      "id": "business",
+      "label": "Sales & business",
+      "icon": "storefrontOutline"
+    },
+    {
+      "id": "teams",
+      "label": "Teams & HR",
+      "icon": "peopleOutline"
+    },
+    {
+      "id": "personal",
+      "label": "Personal life",
+      "icon": "happyOutline"
+    },
+    {
+      "id": "money",
+      "label": "Money",
+      "icon": "walletOutline"
+    },
+    {
+      "id": "home",
+      "label": "Home & family",
+      "icon": "homeOutline"
+    },
+    {
+      "id": "health",
+      "label": "Health & fitness",
+      "icon": "heartOutline"
+    },
+    {
+      "id": "learning",
+      "label": "Education & research",
+      "icon": "schoolOutline"
+    },
+    {
+      "id": "hobbies",
+      "label": "Hobbies & collections",
+      "icon": "albumsOutline"
+    },
+    {
+      "id": "community",
+      "label": "Community & events",
+      "icon": "megaphoneOutline"
+    }
+  ],
+  "templates": [
+    {
+      "id": "project-tasks",
+      "title": "Projects & tasks",
+      "description": "Plan projects and track their tasks: who does what, by when, and how it is going.",
+      "category": "work",
+      "tags": [
+        "tasks",
+        "planning",
+        "team"
+      ],
+      "icon": "checkboxOutline",
+      "sections": [
+        {
+          "key": "projects",
+          "title": "Projects",
+          "icon": "folderOpenOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "planned",
+                  "label": "Planned"
+                },
+                {
+                  "value": "inProgress",
+                  "label": "In progress"
+                },
+                {
+                  "value": "onHold",
+                  "label": "On hold"
+                },
+                {
+                  "value": "done",
+                  "label": "Done"
+                }
+              ]
+            },
+            {
+              "label": "Start date",
+              "fieldName": "startDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Owner",
+              "fieldName": "owner",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Description",
+              "fieldName": "description",
+              "componentCode": 2
+            }
+          ]
+        },
+        {
+          "key": "tasks",
+          "title": "Tasks",
+          "icon": "checkboxOutline",
+          "fields": [
+            {
+              "label": "Task",
+              "fieldName": "task",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "toDo",
+                  "label": "To do"
+                },
+                {
+                  "value": "doing",
+                  "label": "Doing"
+                },
+                {
+                  "value": "waiting",
+                  "label": "Waiting"
+                },
+                {
+                  "value": "done",
+                  "label": "Done"
+                }
+              ]
+            },
+            {
+              "label": "Priority",
+              "fieldName": "priority",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "low",
+                  "label": "Low"
+                },
+                {
+                  "value": "medium",
+                  "label": "Medium"
+                },
+                {
+                  "value": "high",
+                  "label": "High"
+                },
+                {
+                  "value": "urgent",
+                  "label": "Urgent"
+                }
+              ]
+            },
+            {
+              "label": "Assignee",
+              "fieldName": "assignee",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "projects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "todo-list",
+      "title": "To-do list",
+      "description": "A simple list of things to do, with priority and due date.",
+      "category": "work",
+      "tags": [
+        "tasks",
+        "simple",
+        "personal"
+      ],
+      "icon": "listOutline",
+      "sections": [
+        {
+          "key": "todos",
+          "title": "To-dos",
+          "icon": "checkboxOutline",
+          "fields": [
+            {
+              "label": "Task",
+              "fieldName": "task",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Priority",
+              "fieldName": "priority",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "low",
+                  "label": "Low"
+                },
+                {
+                  "value": "medium",
+                  "label": "Medium"
+                },
+                {
+                  "value": "high",
+                  "label": "High"
+                },
+                {
+                  "value": "urgent",
+                  "label": "Urgent"
+                }
+              ]
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meeting-notes",
+      "title": "Meeting notes",
+      "description": "Keep notes, decisions and action items of every meeting.",
+      "category": "work",
+      "tags": [
+        "meetings",
+        "notes",
+        "team"
+      ],
+      "icon": "chatbubblesOutline",
+      "sections": [
+        {
+          "key": "meetings",
+          "title": "Meetings",
+          "icon": "chatbubblesOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Participants",
+              "fieldName": "participants",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Agenda",
+              "fieldName": "agenda",
+              "componentCode": 12
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 2
+            },
+            {
+              "label": "Decisions",
+              "fieldName": "decisions",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "actions",
+          "title": "Action items",
+          "icon": "flagOutline",
+          "fields": [
+            {
+              "label": "Action",
+              "fieldName": "action",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Owner",
+              "fieldName": "owner",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "meetings"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "okr",
+      "title": "Goals & OKRs",
+      "description": "Objectives and measurable key results, for a team or for yourself.",
+      "category": "work",
+      "tags": [
+        "goals",
+        "okr",
+        "strategy"
+      ],
+      "icon": "flagOutline",
+      "sections": [
+        {
+          "key": "objectives",
+          "title": "Objectives",
+          "icon": "flagOutline",
+          "fields": [
+            {
+              "label": "Objective",
+              "fieldName": "objective",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Quarter",
+              "fieldName": "quarter",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "q1",
+                  "label": "Q1"
+                },
+                {
+                  "value": "q2",
+                  "label": "Q2"
+                },
+                {
+                  "value": "q3",
+                  "label": "Q3"
+                },
+                {
+                  "value": "q4",
+                  "label": "Q4"
+                }
+              ]
+            },
+            {
+              "label": "Year",
+              "fieldName": "year",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Owner",
+              "fieldName": "owner",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Why it matters",
+              "fieldName": "whyItMatters",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "keyResults",
+          "title": "Key results",
+          "icon": "trophyOutline",
+          "fields": [
+            {
+              "label": "Key result",
+              "fieldName": "keyResult",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Start value",
+              "fieldName": "startValue",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Target value",
+              "fieldName": "targetValue",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Current value",
+              "fieldName": "currentValue",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Confidence",
+              "fieldName": "confidence",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "onTrack",
+                  "label": "On track"
+                },
+                {
+                  "value": "atRisk",
+                  "label": "At risk"
+                },
+                {
+                  "value": "offTrack",
+                  "label": "Off track"
+                }
+              ]
+            }
+          ],
+          "childOf": [
+            "objectives"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "content-calendar",
+      "title": "Content calendar",
+      "description": "Plan articles, videos and posts: ideas, drafts, publishing dates and channels.",
+      "category": "work",
+      "tags": [
+        "marketing",
+        "editorial",
+        "social"
+      ],
+      "icon": "calendarOutline",
+      "sections": [
+        {
+          "key": "content",
+          "title": "Content",
+          "icon": "documentTextOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "article",
+                  "label": "Article"
+                },
+                {
+                  "value": "video",
+                  "label": "Video"
+                },
+                {
+                  "value": "podcast",
+                  "label": "Podcast"
+                },
+                {
+                  "value": "newsletter",
+                  "label": "Newsletter"
+                },
+                {
+                  "value": "socialPost",
+                  "label": "Social post"
+                }
+              ]
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "idea",
+                  "label": "Idea"
+                },
+                {
+                  "value": "drafting",
+                  "label": "Drafting"
+                },
+                {
+                  "value": "inReview",
+                  "label": "In review"
+                },
+                {
+                  "value": "scheduled",
+                  "label": "Scheduled"
+                },
+                {
+                  "value": "published",
+                  "label": "Published"
+                }
+              ]
+            },
+            {
+              "label": "Channel",
+              "fieldName": "channel",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "website",
+                  "label": "Website"
+                },
+                {
+                  "value": "blog",
+                  "label": "Blog"
+                },
+                {
+                  "value": "youtube",
+                  "label": "YouTube"
+                },
+                {
+                  "value": "instagram",
+                  "label": "Instagram"
+                },
+                {
+                  "value": "linkedin",
+                  "label": "LinkedIn"
+                },
+                {
+                  "value": "newsletter",
+                  "label": "Newsletter"
+                }
+              ]
+            },
+            {
+              "label": "Author",
+              "fieldName": "author",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Publish date",
+              "fieldName": "publishDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Link",
+              "fieldName": "link",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bug-tracker",
+      "title": "Bug tracker",
+      "description": "Report, prioritize and follow up bugs and issues of a product.",
+      "category": "work",
+      "tags": [
+        "software",
+        "issues",
+        "qa"
+      ],
+      "icon": "bugOutline",
+      "sections": [
+        {
+          "key": "bugs",
+          "title": "Bugs",
+          "icon": "bugOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Severity",
+              "fieldName": "severity",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "minor",
+                  "label": "Minor"
+                },
+                {
+                  "value": "major",
+                  "label": "Major"
+                },
+                {
+                  "value": "critical",
+                  "label": "Critical"
+                },
+                {
+                  "value": "blocker",
+                  "label": "Blocker"
+                }
+              ]
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "new",
+                  "label": "New"
+                },
+                {
+                  "value": "confirmed",
+                  "label": "Confirmed"
+                },
+                {
+                  "value": "inProgress",
+                  "label": "In progress"
+                },
+                {
+                  "value": "fixed",
+                  "label": "Fixed"
+                },
+                {
+                  "value": "wonTFix",
+                  "label": "Won't fix"
+                }
+              ]
+            },
+            {
+              "label": "Reported by",
+              "fieldName": "reportedBy",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Assignee",
+              "fieldName": "assignee",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Version",
+              "fieldName": "version",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Steps to reproduce",
+              "fieldName": "stepsToReproduce",
+              "componentCode": 12
+            },
+            {
+              "label": "Expected result",
+              "fieldName": "expectedResult",
+              "componentCode": 12
+            },
+            {
+              "label": "Actual result",
+              "fieldName": "actualResult",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-roadmap",
+      "title": "Product roadmap",
+      "description": "Collect feature ideas and plan them into releases.",
+      "category": "work",
+      "tags": [
+        "product",
+        "features",
+        "releases"
+      ],
+      "icon": "rocketOutline",
+      "sections": [
+        {
+          "key": "releases",
+          "title": "Releases",
+          "icon": "rocketOutline",
+          "fields": [
+            {
+              "label": "Version",
+              "fieldName": "version",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Target date",
+              "fieldName": "targetDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "planned",
+                  "label": "Planned"
+                },
+                {
+                  "value": "inDevelopment",
+                  "label": "In development"
+                },
+                {
+                  "value": "released",
+                  "label": "Released"
+                }
+              ]
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "features",
+          "title": "Features",
+          "icon": "sparklesOutline",
+          "fields": [
+            {
+              "label": "Feature",
+              "fieldName": "feature",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "idea",
+                  "label": "Idea"
+                },
+                {
+                  "value": "planned",
+                  "label": "Planned"
+                },
+                {
+                  "value": "inDevelopment",
+                  "label": "In development"
+                },
+                {
+                  "value": "shipped",
+                  "label": "Shipped"
+                }
+              ]
+            },
+            {
+              "label": "Impact",
+              "fieldName": "impact",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "low",
+                  "label": "Low"
+                },
+                {
+                  "value": "medium",
+                  "label": "Medium"
+                },
+                {
+                  "value": "high",
+                  "label": "High"
+                }
+              ]
+            },
+            {
+              "label": "Effort",
+              "fieldName": "effort",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "small",
+                  "label": "Small"
+                },
+                {
+                  "value": "medium",
+                  "label": "Medium"
+                },
+                {
+                  "value": "large",
+                  "label": "Large"
+                }
+              ]
+            },
+            {
+              "label": "Requested by",
+              "fieldName": "requestedBy",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Description",
+              "fieldName": "description",
+              "componentCode": 2
+            }
+          ],
+          "childOf": [
+            "releases"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "time-tracking",
+      "title": "Clients & time tracking",
+      "description": "Track the hours you work for each client and project, ready for invoicing.",
+      "category": "work",
+      "tags": [
+        "freelance",
+        "hours",
+        "billing"
+      ],
+      "icon": "timeOutline",
+      "sections": [
+        {
+          "key": "clients",
+          "title": "Clients",
+          "icon": "businessOutline",
+          "fields": [
+            {
+              "label": "Client",
+              "fieldName": "client",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Contact person",
+              "fieldName": "contactPerson",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Hourly rate",
+              "fieldName": "hourlyRate",
+              "componentCode": 1,
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "icon": "folderOpenOutline",
+          "fields": [
+            {
+              "label": "Project",
+              "fieldName": "project",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "active",
+                  "label": "Active"
+                },
+                {
+                  "value": "paused",
+                  "label": "Paused"
+                },
+                {
+                  "value": "completed",
+                  "label": "Completed"
+                }
+              ]
+            },
+            {
+              "label": "Budget hours",
+              "fieldName": "budgetHours",
+              "componentCode": 1,
+              "type": "number"
+            }
+          ],
+          "childOf": [
+            "clients"
+          ]
+        },
+        {
+          "key": "timeEntries",
+          "title": "Time entries",
+          "icon": "timeOutline",
+          "fields": [
+            {
+              "label": "Activity",
+              "fieldName": "activity",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Hours",
+              "fieldName": "hours",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Billable",
+              "fieldName": "billable",
+              "componentCode": 3
+            },
+            {
+              "label": "Invoiced",
+              "fieldName": "invoiced",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "projects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crm",
+      "title": "Simple CRM",
+      "description": "Companies, contacts and the deals you are working on.",
+      "category": "business",
+      "tags": [
+        "sales",
+        "contacts",
+        "customers"
+      ],
+      "icon": "peopleCircleOutline",
+      "sections": [
+        {
+          "key": "companies",
+          "title": "Companies",
+          "icon": "businessOutline",
+          "fields": [
+            {
+              "label": "Company",
+              "fieldName": "company",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Industry",
+              "fieldName": "industry",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "technology",
+                  "label": "Technology"
+                },
+                {
+                  "value": "retail",
+                  "label": "Retail"
+                },
+                {
+                  "value": "manufacturing",
+                  "label": "Manufacturing"
+                },
+                {
+                  "value": "services",
+                  "label": "Services"
+                },
+                {
+                  "value": "publicSector",
+                  "label": "Public sector"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Website",
+              "fieldName": "website",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "City",
+              "fieldName": "city",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "contacts",
+          "title": "Contacts",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Role",
+              "fieldName": "role",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "companies"
+          ]
+        },
+        {
+          "key": "deals",
+          "title": "Deals",
+          "icon": "cashOutline",
+          "fields": [
+            {
+              "label": "Deal",
+              "fieldName": "deal",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Value",
+              "fieldName": "value",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Stage",
+              "fieldName": "stage",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "lead",
+                  "label": "Lead"
+                },
+                {
+                  "value": "qualified",
+                  "label": "Qualified"
+                },
+                {
+                  "value": "proposal",
+                  "label": "Proposal"
+                },
+                {
+                  "value": "negotiation",
+                  "label": "Negotiation"
+                },
+                {
+                  "value": "won",
+                  "label": "Won"
+                },
+                {
+                  "value": "lost",
+                  "label": "Lost"
+                }
+              ]
+            },
+            {
+              "label": "Expected close",
+              "fieldName": "expectedClose",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Next step",
+              "fieldName": "nextStep",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "companies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sales-pipeline",
+      "title": "Sales pipeline",
+      "description": "Follow every lead from first contact to a closed deal.",
+      "category": "business",
+      "tags": [
+        "sales",
+        "leads",
+        "funnel"
+      ],
+      "icon": "funnelOutline",
+      "sections": [
+        {
+          "key": "leads",
+          "title": "Leads",
+          "icon": "funnelOutline",
+          "fields": [
+            {
+              "label": "Lead",
+              "fieldName": "lead",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Company",
+              "fieldName": "company",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Source",
+              "fieldName": "source",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "website",
+                  "label": "Website"
+                },
+                {
+                  "value": "referral",
+                  "label": "Referral"
+                },
+                {
+                  "value": "event",
+                  "label": "Event"
+                },
+                {
+                  "value": "coldOutreach",
+                  "label": "Cold outreach"
+                },
+                {
+                  "value": "social",
+                  "label": "Social"
+                }
+              ]
+            },
+            {
+              "label": "Stage",
+              "fieldName": "stage",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "new",
+                  "label": "New"
+                },
+                {
+                  "value": "contacted",
+                  "label": "Contacted"
+                },
+                {
+                  "value": "qualified",
+                  "label": "Qualified"
+                },
+                {
+                  "value": "proposalSent",
+                  "label": "Proposal sent"
+                },
+                {
+                  "value": "won",
+                  "label": "Won"
+                },
+                {
+                  "value": "lost",
+                  "label": "Lost"
+                }
+              ]
+            },
+            {
+              "label": "Estimated value",
+              "fieldName": "estimatedValue",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Next follow-up",
+              "fieldName": "nextFollowUp",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invoices",
+      "title": "Invoices",
+      "description": "Clients and the invoices you send them, with due dates and payment status.",
+      "category": "business",
+      "tags": [
+        "billing",
+        "freelance",
+        "accounting"
+      ],
+      "icon": "receiptOutline",
+      "sections": [
+        {
+          "key": "clients",
+          "title": "Clients",
+          "icon": "businessOutline",
+          "fields": [
+            {
+              "label": "Client",
+              "fieldName": "client",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "VAT number",
+              "fieldName": "vatNumber",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Address",
+              "fieldName": "address",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "invoices",
+          "title": "Invoices",
+          "icon": "receiptOutline",
+          "fields": [
+            {
+              "label": "Number",
+              "fieldName": "number",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Issue date",
+              "fieldName": "issueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Amount",
+              "fieldName": "amount",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "draft",
+                  "label": "Draft"
+                },
+                {
+                  "value": "sent",
+                  "label": "Sent"
+                },
+                {
+                  "value": "paid",
+                  "label": "Paid"
+                },
+                {
+                  "value": "overdue",
+                  "label": "Overdue"
+                },
+                {
+                  "value": "cancelled",
+                  "label": "Cancelled"
+                }
+              ]
+            },
+            {
+              "label": "Description",
+              "fieldName": "description",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "clients"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "title": "Inventory",
+      "description": "Products, stock levels and where they are stored.",
+      "category": "business",
+      "tags": [
+        "stock",
+        "warehouse",
+        "products"
+      ],
+      "icon": "cubeOutline",
+      "sections": [
+        {
+          "key": "locations",
+          "title": "Locations",
+          "icon": "locationOutline",
+          "fields": [
+            {
+              "label": "Location",
+              "fieldName": "location",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Address",
+              "fieldName": "address",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "products",
+          "title": "Products",
+          "icon": "cubeOutline",
+          "fields": [
+            {
+              "label": "Product",
+              "fieldName": "product",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "SKU",
+              "fieldName": "sku",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Category",
+              "fieldName": "category",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "rawMaterial",
+                  "label": "Raw material"
+                },
+                {
+                  "value": "finishedProduct",
+                  "label": "Finished product"
+                },
+                {
+                  "value": "sparePart",
+                  "label": "Spare part"
+                },
+                {
+                  "value": "consumable",
+                  "label": "Consumable"
+                }
+              ]
+            },
+            {
+              "label": "Quantity",
+              "fieldName": "quantity",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Minimum stock",
+              "fieldName": "minimumStock",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Unit price",
+              "fieldName": "unitPrice",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Supplier",
+              "fieldName": "supplier",
+              "componentCode": 1,
+              "type": "text"
+            }
+          ],
+          "childOf": [
+            "locations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "suppliers",
+      "title": "Suppliers",
+      "description": "Suppliers, what they sell you and the orders you place.",
+      "category": "business",
+      "tags": [
+        "purchasing",
+        "vendors",
+        "orders"
+      ],
+      "icon": "storefrontOutline",
+      "sections": [
+        {
+          "key": "suppliers",
+          "title": "Suppliers",
+          "icon": "storefrontOutline",
+          "fields": [
+            {
+              "label": "Supplier",
+              "fieldName": "supplier",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Contact person",
+              "fieldName": "contactPerson",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Website",
+              "fieldName": "website",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "Rating",
+              "fieldName": "rating",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "excellent",
+                  "label": "Excellent"
+                },
+                {
+                  "value": "good",
+                  "label": "Good"
+                },
+                {
+                  "value": "fair",
+                  "label": "Fair"
+                },
+                {
+                  "value": "poor",
+                  "label": "Poor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "orders",
+          "title": "Purchase orders",
+          "icon": "cartOutline",
+          "fields": [
+            {
+              "label": "Order number",
+              "fieldName": "orderNumber",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Order date",
+              "fieldName": "orderDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Expected delivery",
+              "fieldName": "expectedDelivery",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Total",
+              "fieldName": "total",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "draft",
+                  "label": "Draft"
+                },
+                {
+                  "value": "ordered",
+                  "label": "Ordered"
+                },
+                {
+                  "value": "delivered",
+                  "label": "Delivered"
+                },
+                {
+                  "value": "cancelled",
+                  "label": "Cancelled"
+                }
+              ]
+            }
+          ],
+          "childOf": [
+            "suppliers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support-tickets",
+      "title": "Customer support",
+      "description": "Requests from customers, their priority and how they were solved.",
+      "category": "business",
+      "tags": [
+        "helpdesk",
+        "tickets",
+        "customers"
+      ],
+      "icon": "chatbubblesOutline",
+      "sections": [
+        {
+          "key": "tickets",
+          "title": "Tickets",
+          "icon": "ticketOutline",
+          "fields": [
+            {
+              "label": "Subject",
+              "fieldName": "subject",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Customer",
+              "fieldName": "customer",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Customer email",
+              "fieldName": "customerEmail",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Channel",
+              "fieldName": "channel",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "email",
+                  "label": "Email"
+                },
+                {
+                  "value": "phone",
+                  "label": "Phone"
+                },
+                {
+                  "value": "chat",
+                  "label": "Chat"
+                },
+                {
+                  "value": "social",
+                  "label": "Social"
+                }
+              ]
+            },
+            {
+              "label": "Priority",
+              "fieldName": "priority",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "low",
+                  "label": "Low"
+                },
+                {
+                  "value": "medium",
+                  "label": "Medium"
+                },
+                {
+                  "value": "high",
+                  "label": "High"
+                },
+                {
+                  "value": "urgent",
+                  "label": "Urgent"
+                }
+              ]
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "open",
+                  "label": "Open"
+                },
+                {
+                  "value": "waitingForCustomer",
+                  "label": "Waiting for customer"
+                },
+                {
+                  "value": "resolved",
+                  "label": "Resolved"
+                },
+                {
+                  "value": "closed",
+                  "label": "Closed"
+                }
+              ]
+            },
+            {
+              "label": "Assignee",
+              "fieldName": "assignee",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Request",
+              "fieldName": "request",
+              "componentCode": 12
+            },
+            {
+              "label": "Resolution",
+              "fieldName": "resolution",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "equipment",
+      "title": "Equipment & assets",
+      "description": "Company equipment, who has it, warranties and maintenance.",
+      "category": "business",
+      "tags": [
+        "assets",
+        "it",
+        "maintenance"
+      ],
+      "icon": "constructOutline",
+      "sections": [
+        {
+          "key": "assets",
+          "title": "Assets",
+          "icon": "constructOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "laptop",
+                  "label": "Laptop"
+                },
+                {
+                  "value": "phone",
+                  "label": "Phone"
+                },
+                {
+                  "value": "monitor",
+                  "label": "Monitor"
+                },
+                {
+                  "value": "vehicle",
+                  "label": "Vehicle"
+                },
+                {
+                  "value": "machine",
+                  "label": "Machine"
+                },
+                {
+                  "value": "furniture",
+                  "label": "Furniture"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Serial number",
+              "fieldName": "serialNumber",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Assigned to",
+              "fieldName": "assignedTo",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Purchase date",
+              "fieldName": "purchaseDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Purchase price",
+              "fieldName": "purchasePrice",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Warranty until",
+              "fieldName": "warrantyUntil",
+              "componentCode": 8,
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "key": "maintenance",
+          "title": "Maintenance",
+          "icon": "buildOutline",
+          "fields": [
+            {
+              "label": "Intervention",
+              "fieldName": "intervention",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "assets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "title": "Real estate listings",
+      "description": "Properties for sale or rent, with their details and viewings.",
+      "category": "business",
+      "tags": [
+        "properties",
+        "agency",
+        "listings"
+      ],
+      "icon": "homeOutline",
+      "sections": [
+        {
+          "key": "properties",
+          "title": "Properties",
+          "icon": "homeOutline",
+          "fields": [
+            {
+              "label": "Address",
+              "fieldName": "address",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "apartment",
+                  "label": "Apartment"
+                },
+                {
+                  "value": "house",
+                  "label": "House"
+                },
+                {
+                  "value": "office",
+                  "label": "Office"
+                },
+                {
+                  "value": "shop",
+                  "label": "Shop"
+                },
+                {
+                  "value": "land",
+                  "label": "Land"
+                }
+              ]
+            },
+            {
+              "label": "Contract",
+              "fieldName": "contract",
+              "componentCode": 5,
+              "options": [
+                {
+                  "value": "sale",
+                  "label": "Sale"
+                },
+                {
+                  "value": "rent",
+                  "label": "Rent"
+                }
+              ]
+            },
+            {
+              "label": "Price",
+              "fieldName": "price",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Square meters",
+              "fieldName": "squareMeters",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Rooms",
+              "fieldName": "rooms",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "available",
+                  "label": "Available"
+                },
+                {
+                  "value": "underOffer",
+                  "label": "Under offer"
+                },
+                {
+                  "value": "sold",
+                  "label": "Sold"
+                },
+                {
+                  "value": "rented",
+                  "label": "Rented"
+                }
+              ]
+            },
+            {
+              "label": "Description",
+              "fieldName": "description",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "viewings",
+          "title": "Viewings",
+          "icon": "eyeOutline",
+          "fields": [
+            {
+              "label": "Visitor",
+              "fieldName": "visitor",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Feedback",
+              "fieldName": "feedback",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "properties"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recruiting",
+      "title": "Recruiting",
+      "description": "Open positions and the candidates applying for them.",
+      "category": "teams",
+      "tags": [
+        "hiring",
+        "hr",
+        "candidates"
+      ],
+      "icon": "idCardOutline",
+      "sections": [
+        {
+          "key": "positions",
+          "title": "Positions",
+          "icon": "briefcaseOutline",
+          "fields": [
+            {
+              "label": "Job title",
+              "fieldName": "jobTitle",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Department",
+              "fieldName": "department",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "open",
+                  "label": "Open"
+                },
+                {
+                  "value": "onHold",
+                  "label": "On hold"
+                },
+                {
+                  "value": "filled",
+                  "label": "Filled"
+                },
+                {
+                  "value": "closed",
+                  "label": "Closed"
+                }
+              ]
+            },
+            {
+              "label": "Opening date",
+              "fieldName": "openingDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Description",
+              "fieldName": "description",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "candidates",
+          "title": "Candidates",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "CV link",
+              "fieldName": "cvLink",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "Stage",
+              "fieldName": "stage",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "applied",
+                  "label": "Applied"
+                },
+                {
+                  "value": "screening",
+                  "label": "Screening"
+                },
+                {
+                  "value": "interview",
+                  "label": "Interview"
+                },
+                {
+                  "value": "offer",
+                  "label": "Offer"
+                },
+                {
+                  "value": "hired",
+                  "label": "Hired"
+                },
+                {
+                  "value": "rejected",
+                  "label": "Rejected"
+                }
+              ]
+            },
+            {
+              "label": "Rating",
+              "fieldName": "rating",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ]
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "positions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team-directory",
+      "title": "Team directory",
+      "description": "Who is who in your team: roles, contacts and skills.",
+      "category": "teams",
+      "tags": [
+        "people",
+        "contacts",
+        "hr"
+      ],
+      "icon": "peopleOutline",
+      "sections": [
+        {
+          "key": "people",
+          "title": "People",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Role",
+              "fieldName": "role",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Department",
+              "fieldName": "department",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Start date",
+              "fieldName": "startDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Skills",
+              "fieldName": "skills",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "time-off",
+      "title": "Time off",
+      "description": "Holiday and leave requests of the team.",
+      "category": "teams",
+      "tags": [
+        "leave",
+        "holidays",
+        "hr"
+      ],
+      "icon": "airplaneOutline",
+      "sections": [
+        {
+          "key": "requests",
+          "title": "Requests",
+          "icon": "airplaneOutline",
+          "fields": [
+            {
+              "label": "Person",
+              "fieldName": "person",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "vacation",
+                  "label": "Vacation"
+                },
+                {
+                  "value": "sickLeave",
+                  "label": "Sick leave"
+                },
+                {
+                  "value": "parentalLeave",
+                  "label": "Parental leave"
+                },
+                {
+                  "value": "personal",
+                  "label": "Personal"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "From",
+              "fieldName": "from",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "To",
+              "fieldName": "to",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "requested",
+                  "label": "Requested"
+                },
+                {
+                  "value": "approved",
+                  "label": "Approved"
+                },
+                {
+                  "value": "rejected",
+                  "label": "Rejected"
+                }
+              ]
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "onboarding",
+      "title": "Employee onboarding",
+      "description": "Checklist to welcome each new hire.",
+      "category": "teams",
+      "tags": [
+        "hr",
+        "checklist",
+        "new hires"
+      ],
+      "icon": "clipboardOutline",
+      "sections": [
+        {
+          "key": "newHires",
+          "title": "New hires",
+          "icon": "personAddOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Role",
+              "fieldName": "role",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Start date",
+              "fieldName": "startDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Buddy",
+              "fieldName": "buddy",
+              "componentCode": 1,
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "steps",
+          "title": "Onboarding steps",
+          "icon": "clipboardOutline",
+          "fields": [
+            {
+              "label": "Step",
+              "fieldName": "step",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Responsible",
+              "fieldName": "responsible",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "newHires"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "habit-tracker",
+      "title": "Habit tracker",
+      "description": "Habits you want to build and a daily log to keep you honest.",
+      "category": "personal",
+      "tags": [
+        "habits",
+        "routine",
+        "self-improvement"
+      ],
+      "icon": "repeatOutline",
+      "sections": [
+        {
+          "key": "habits",
+          "title": "Habits",
+          "icon": "repeatOutline",
+          "fields": [
+            {
+              "label": "Habit",
+              "fieldName": "habit",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Frequency",
+              "fieldName": "frequency",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "daily",
+                  "label": "Daily"
+                },
+                {
+                  "value": "weekdays",
+                  "label": "Weekdays"
+                },
+                {
+                  "value": "weekly",
+                  "label": "Weekly"
+                }
+              ]
+            },
+            {
+              "label": "Why",
+              "fieldName": "why",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "log",
+          "title": "Log",
+          "icon": "checkmarkDoneOutline",
+          "fields": [
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "habits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "journal",
+      "title": "Journal",
+      "description": "A private diary: one entry per day, with your mood.",
+      "category": "personal",
+      "tags": [
+        "diary",
+        "writing",
+        "mood"
+      ],
+      "icon": "journalOutline",
+      "sections": [
+        {
+          "key": "entries",
+          "title": "Entries",
+          "icon": "journalOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Mood",
+              "fieldName": "mood",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "great",
+                  "label": "Great"
+                },
+                {
+                  "value": "good",
+                  "label": "Good"
+                },
+                {
+                  "value": "okay",
+                  "label": "Okay"
+                },
+                {
+                  "value": "bad",
+                  "label": "Bad"
+                },
+                {
+                  "value": "awful",
+                  "label": "Awful"
+                }
+              ]
+            },
+            {
+              "label": "Entry",
+              "fieldName": "entry",
+              "componentCode": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-goals",
+      "title": "Personal goals",
+      "description": "Big goals broken down into milestones.",
+      "category": "personal",
+      "tags": [
+        "goals",
+        "planning",
+        "self-improvement"
+      ],
+      "icon": "trophyOutline",
+      "sections": [
+        {
+          "key": "goals",
+          "title": "Goals",
+          "icon": "trophyOutline",
+          "fields": [
+            {
+              "label": "Goal",
+              "fieldName": "goal",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Area",
+              "fieldName": "area",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "health",
+                  "label": "Health"
+                },
+                {
+                  "value": "career",
+                  "label": "Career"
+                },
+                {
+                  "value": "money",
+                  "label": "Money"
+                },
+                {
+                  "value": "relationships",
+                  "label": "Relationships"
+                },
+                {
+                  "value": "learning",
+                  "label": "Learning"
+                },
+                {
+                  "value": "fun",
+                  "label": "Fun"
+                }
+              ]
+            },
+            {
+              "label": "Target date",
+              "fieldName": "targetDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "notStarted",
+                  "label": "Not started"
+                },
+                {
+                  "value": "inProgress",
+                  "label": "In progress"
+                },
+                {
+                  "value": "achieved",
+                  "label": "Achieved"
+                },
+                {
+                  "value": "dropped",
+                  "label": "Dropped"
+                }
+              ]
+            },
+            {
+              "label": "Why it matters",
+              "fieldName": "whyItMatters",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "milestones",
+          "title": "Milestones",
+          "icon": "flagOutline",
+          "fields": [
+            {
+              "label": "Milestone",
+              "fieldName": "milestone",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "goals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "address-book",
+      "title": "Address book",
+      "description": "Friends, family and acquaintances, with birthdays and addresses.",
+      "category": "personal",
+      "tags": [
+        "contacts",
+        "birthdays",
+        "people"
+      ],
+      "icon": "bookOutline",
+      "sections": [
+        {
+          "key": "contacts",
+          "title": "Contacts",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Group",
+              "fieldName": "group",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "family",
+                  "label": "Family"
+                },
+                {
+                  "value": "friends",
+                  "label": "Friends"
+                },
+                {
+                  "value": "work",
+                  "label": "Work"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Birthday",
+              "fieldName": "birthday",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Address",
+              "fieldName": "address",
+              "componentCode": 12
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gift-ideas",
+      "title": "Gift ideas",
+      "description": "Never run out of ideas: people and the gifts you may give them.",
+      "category": "personal",
+      "tags": [
+        "gifts",
+        "birthdays",
+        "shopping"
+      ],
+      "icon": "giftOutline",
+      "sections": [
+        {
+          "key": "people",
+          "title": "People",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Birthday",
+              "fieldName": "birthday",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Interests",
+              "fieldName": "interests",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "ideas",
+          "title": "Ideas",
+          "icon": "giftOutline",
+          "fields": [
+            {
+              "label": "Gift",
+              "fieldName": "gift",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Price",
+              "fieldName": "price",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Link",
+              "fieldName": "link",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "Occasion",
+              "fieldName": "occasion",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "birthday",
+                  "label": "Birthday"
+                },
+                {
+                  "value": "christmas",
+                  "label": "Christmas"
+                },
+                {
+                  "value": "anniversary",
+                  "label": "Anniversary"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Bought",
+              "fieldName": "bought",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "people"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "travel-planner",
+      "title": "Travel planner",
+      "description": "Trips with their itinerary, bookings and packing list.",
+      "category": "personal",
+      "tags": [
+        "travel",
+        "holidays",
+        "itinerary"
+      ],
+      "icon": "airplaneOutline",
+      "sections": [
+        {
+          "key": "trips",
+          "title": "Trips",
+          "icon": "airplaneOutline",
+          "fields": [
+            {
+              "label": "Destination",
+              "fieldName": "destination",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "From",
+              "fieldName": "from",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "To",
+              "fieldName": "to",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Budget",
+              "fieldName": "budget",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "itinerary",
+          "title": "Itinerary",
+          "icon": "mapOutline",
+          "fields": [
+            {
+              "label": "Activity",
+              "fieldName": "activity",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "When",
+              "fieldName": "when",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Place",
+              "fieldName": "place",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "transport",
+                  "label": "Transport"
+                },
+                {
+                  "value": "accommodation",
+                  "label": "Accommodation"
+                },
+                {
+                  "value": "visit",
+                  "label": "Visit"
+                },
+                {
+                  "value": "food",
+                  "label": "Food"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Booking reference",
+              "fieldName": "bookingReference",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            }
+          ],
+          "childOf": [
+            "trips"
+          ]
+        },
+        {
+          "key": "packing",
+          "title": "Packing list",
+          "icon": "bagHandleOutline",
+          "fields": [
+            {
+              "label": "Item",
+              "fieldName": "item",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Packed",
+              "fieldName": "packed",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "trips"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personal-budget",
+      "title": "Personal budget",
+      "description": "Income and expenses by category, month by month.",
+      "category": "money",
+      "tags": [
+        "budget",
+        "expenses",
+        "finance"
+      ],
+      "icon": "walletOutline",
+      "sections": [
+        {
+          "key": "transactions",
+          "title": "Transactions",
+          "icon": "swapHorizontalOutline",
+          "fields": [
+            {
+              "label": "Description",
+              "fieldName": "description",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 5,
+              "options": [
+                {
+                  "value": "expense",
+                  "label": "Expense"
+                },
+                {
+                  "value": "income",
+                  "label": "Income"
+                }
+              ]
+            },
+            {
+              "label": "Amount",
+              "fieldName": "amount",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Category",
+              "fieldName": "category",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "housing",
+                  "label": "Housing"
+                },
+                {
+                  "value": "food",
+                  "label": "Food"
+                },
+                {
+                  "value": "transport",
+                  "label": "Transport"
+                },
+                {
+                  "value": "utilities",
+                  "label": "Utilities"
+                },
+                {
+                  "value": "health",
+                  "label": "Health"
+                },
+                {
+                  "value": "leisure",
+                  "label": "Leisure"
+                },
+                {
+                  "value": "shopping",
+                  "label": "Shopping"
+                },
+                {
+                  "value": "salary",
+                  "label": "Salary"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Account",
+              "fieldName": "account",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "cash",
+                  "label": "Cash"
+                },
+                {
+                  "value": "bankAccount",
+                  "label": "Bank account"
+                },
+                {
+                  "value": "creditCard",
+                  "label": "Credit card"
+                }
+              ]
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subscriptions",
+      "title": "Subscriptions",
+      "description": "All the services you pay for, with cost and renewal date.",
+      "category": "money",
+      "tags": [
+        "recurring",
+        "costs",
+        "services"
+      ],
+      "icon": "cardOutline",
+      "sections": [
+        {
+          "key": "subscriptions",
+          "title": "Subscriptions",
+          "icon": "cardOutline",
+          "fields": [
+            {
+              "label": "Service",
+              "fieldName": "service",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Billing",
+              "fieldName": "billing",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "monthly",
+                  "label": "Monthly"
+                },
+                {
+                  "value": "quarterly",
+                  "label": "Quarterly"
+                },
+                {
+                  "value": "yearly",
+                  "label": "Yearly"
+                }
+              ]
+            },
+            {
+              "label": "Next renewal",
+              "fieldName": "nextRenewal",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Payment method",
+              "fieldName": "paymentMethod",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "creditCard",
+                  "label": "Credit card"
+                },
+                {
+                  "value": "bankAccount",
+                  "label": "Bank account"
+                },
+                {
+                  "value": "paypal",
+                  "label": "PayPal"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Active",
+              "fieldName": "active",
+              "componentCode": 3
+            },
+            {
+              "label": "Manage link",
+              "fieldName": "manageLink",
+              "componentCode": 1,
+              "type": "url"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "savings-goals",
+      "title": "Savings goals",
+      "description": "What you are saving for and the deposits you make.",
+      "category": "money",
+      "tags": [
+        "savings",
+        "goals",
+        "finance"
+      ],
+      "icon": "cashOutline",
+      "sections": [
+        {
+          "key": "goals",
+          "title": "Goals",
+          "icon": "trophyOutline",
+          "fields": [
+            {
+              "label": "Goal",
+              "fieldName": "goal",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Target amount",
+              "fieldName": "targetAmount",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Target date",
+              "fieldName": "targetDate",
+              "componentCode": 8,
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "key": "deposits",
+          "title": "Deposits",
+          "icon": "cashOutline",
+          "fields": [
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Amount",
+              "fieldName": "amount",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "goals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recipes",
+      "title": "Recipes",
+      "description": "Your recipe book: ingredients, steps and how long it takes.",
+      "category": "home",
+      "tags": [
+        "cooking",
+        "food",
+        "kitchen"
+      ],
+      "icon": "restaurantOutline",
+      "sections": [
+        {
+          "key": "recipes",
+          "title": "Recipes",
+          "icon": "restaurantOutline",
+          "fields": [
+            {
+              "label": "Recipe",
+              "fieldName": "recipe",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Course",
+              "fieldName": "course",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "starter",
+                  "label": "Starter"
+                },
+                {
+                  "value": "main",
+                  "label": "Main"
+                },
+                {
+                  "value": "side",
+                  "label": "Side"
+                },
+                {
+                  "value": "dessert",
+                  "label": "Dessert"
+                },
+                {
+                  "value": "breakfast",
+                  "label": "Breakfast"
+                },
+                {
+                  "value": "drink",
+                  "label": "Drink"
+                }
+              ]
+            },
+            {
+              "label": "Servings",
+              "fieldName": "servings",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Minutes",
+              "fieldName": "minutes",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Difficulty",
+              "fieldName": "difficulty",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "easy",
+                  "label": "Easy"
+                },
+                {
+                  "value": "medium",
+                  "label": "Medium"
+                },
+                {
+                  "value": "hard",
+                  "label": "Hard"
+                }
+              ]
+            },
+            {
+              "label": "Source",
+              "fieldName": "source",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "Ingredients",
+              "fieldName": "ingredients",
+              "componentCode": 12
+            },
+            {
+              "label": "Steps",
+              "fieldName": "steps",
+              "componentCode": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meal-planner",
+      "title": "Meal planner",
+      "description": "Plan the meals of the week and the shopping list.",
+      "category": "home",
+      "tags": [
+        "food",
+        "planning",
+        "shopping"
+      ],
+      "icon": "fastFoodOutline",
+      "sections": [
+        {
+          "key": "meals",
+          "title": "Meals",
+          "icon": "fastFoodOutline",
+          "fields": [
+            {
+              "label": "Dish",
+              "fieldName": "dish",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Meal",
+              "fieldName": "meal",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "breakfast",
+                  "label": "Breakfast"
+                },
+                {
+                  "value": "lunch",
+                  "label": "Lunch"
+                },
+                {
+                  "value": "dinner",
+                  "label": "Dinner"
+                },
+                {
+                  "value": "snack",
+                  "label": "Snack"
+                }
+              ]
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "shopping",
+          "title": "Shopping list",
+          "icon": "cartOutline",
+          "fields": [
+            {
+              "label": "Item",
+              "fieldName": "item",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Quantity",
+              "fieldName": "quantity",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Aisle",
+              "fieldName": "aisle",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "produce",
+                  "label": "Produce"
+                },
+                {
+                  "value": "dairy",
+                  "label": "Dairy"
+                },
+                {
+                  "value": "meatFish",
+                  "label": "Meat & fish"
+                },
+                {
+                  "value": "bakery",
+                  "label": "Bakery"
+                },
+                {
+                  "value": "pantry",
+                  "label": "Pantry"
+                },
+                {
+                  "value": "frozen",
+                  "label": "Frozen"
+                },
+                {
+                  "value": "household",
+                  "label": "Household"
+                }
+              ]
+            },
+            {
+              "label": "Bought",
+              "fieldName": "bought",
+              "componentCode": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-maintenance",
+      "title": "Home maintenance",
+      "description": "Recurring chores and repairs around the house.",
+      "category": "home",
+      "tags": [
+        "house",
+        "chores",
+        "repairs"
+      ],
+      "icon": "hammerOutline",
+      "sections": [
+        {
+          "key": "tasks",
+          "title": "Tasks",
+          "icon": "hammerOutline",
+          "fields": [
+            {
+              "label": "Task",
+              "fieldName": "task",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Room",
+              "fieldName": "room",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "kitchen",
+                  "label": "Kitchen"
+                },
+                {
+                  "value": "bathroom",
+                  "label": "Bathroom"
+                },
+                {
+                  "value": "livingRoom",
+                  "label": "Living room"
+                },
+                {
+                  "value": "bedroom",
+                  "label": "Bedroom"
+                },
+                {
+                  "value": "garden",
+                  "label": "Garden"
+                },
+                {
+                  "value": "garage",
+                  "label": "Garage"
+                },
+                {
+                  "value": "wholeHouse",
+                  "label": "Whole house"
+                }
+              ]
+            },
+            {
+              "label": "Frequency",
+              "fieldName": "frequency",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "once",
+                  "label": "Once"
+                },
+                {
+                  "value": "weekly",
+                  "label": "Weekly"
+                },
+                {
+                  "value": "monthly",
+                  "label": "Monthly"
+                },
+                {
+                  "value": "every6Months",
+                  "label": "Every 6 months"
+                },
+                {
+                  "value": "yearly",
+                  "label": "Yearly"
+                }
+              ]
+            },
+            {
+              "label": "Next due",
+              "fieldName": "nextDue",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Contractor",
+              "fieldName": "contractor",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plant-care",
+      "title": "Plant care",
+      "description": "Your plants and when to water, feed and repot them.",
+      "category": "home",
+      "tags": [
+        "plants",
+        "garden",
+        "care"
+      ],
+      "icon": "leafOutline",
+      "sections": [
+        {
+          "key": "plants",
+          "title": "Plants",
+          "icon": "leafOutline",
+          "fields": [
+            {
+              "label": "Plant",
+              "fieldName": "plant",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Species",
+              "fieldName": "species",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Location",
+              "fieldName": "location",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "indoor",
+                  "label": "Indoor"
+                },
+                {
+                  "value": "balcony",
+                  "label": "Balcony"
+                },
+                {
+                  "value": "garden",
+                  "label": "Garden"
+                }
+              ]
+            },
+            {
+              "label": "Light",
+              "fieldName": "light",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "fullSun",
+                  "label": "Full sun"
+                },
+                {
+                  "value": "partialShade",
+                  "label": "Partial shade"
+                },
+                {
+                  "value": "shade",
+                  "label": "Shade"
+                }
+              ]
+            },
+            {
+              "label": "Watering",
+              "fieldName": "watering",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "everyDay",
+                  "label": "Every day"
+                },
+                {
+                  "value": "twiceAWeek",
+                  "label": "Twice a week"
+                },
+                {
+                  "value": "weekly",
+                  "label": "Weekly"
+                },
+                {
+                  "value": "everyTwoWeeks",
+                  "label": "Every two weeks"
+                }
+              ]
+            },
+            {
+              "label": "Last watered",
+              "fieldName": "lastWatered",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pet-care",
+      "title": "Pet care",
+      "description": "Your pets, their vet visits, vaccines and medicines.",
+      "category": "home",
+      "tags": [
+        "pets",
+        "vet",
+        "health"
+      ],
+      "icon": "pawOutline",
+      "sections": [
+        {
+          "key": "pets",
+          "title": "Pets",
+          "icon": "pawOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Species",
+              "fieldName": "species",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "dog",
+                  "label": "Dog"
+                },
+                {
+                  "value": "cat",
+                  "label": "Cat"
+                },
+                {
+                  "value": "bird",
+                  "label": "Bird"
+                },
+                {
+                  "value": "fish",
+                  "label": "Fish"
+                },
+                {
+                  "value": "rabbit",
+                  "label": "Rabbit"
+                },
+                {
+                  "value": "other",
+                  "label": "Other"
+                }
+              ]
+            },
+            {
+              "label": "Breed",
+              "fieldName": "breed",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Birth date",
+              "fieldName": "birthDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Microchip",
+              "fieldName": "microchip",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Vet",
+              "fieldName": "vet",
+              "componentCode": 1,
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "visits",
+          "title": "Vet visits & vaccines",
+          "icon": "medkitOutline",
+          "fields": [
+            {
+              "label": "Reason",
+              "fieldName": "reason",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Next due",
+              "fieldName": "nextDue",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "pets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "car-maintenance",
+      "title": "Car maintenance",
+      "description": "Vehicles, services, repairs and fuel costs.",
+      "category": "home",
+      "tags": [
+        "car",
+        "vehicles",
+        "costs"
+      ],
+      "icon": "carOutline",
+      "sections": [
+        {
+          "key": "vehicles",
+          "title": "Vehicles",
+          "icon": "carOutline",
+          "fields": [
+            {
+              "label": "Vehicle",
+              "fieldName": "vehicle",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Plate",
+              "fieldName": "plate",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Year",
+              "fieldName": "year",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Insurance expiry",
+              "fieldName": "insuranceExpiry",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Inspection due",
+              "fieldName": "inspectionDue",
+              "componentCode": 8,
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "key": "services",
+          "title": "Services",
+          "icon": "buildOutline",
+          "fields": [
+            {
+              "label": "Service",
+              "fieldName": "service",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Mileage",
+              "fieldName": "mileage",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Garage",
+              "fieldName": "garage",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "vehicles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workout-log",
+      "title": "Workout log",
+      "description": "Workouts and exercises, with sets, reps and weights.",
+      "category": "health",
+      "tags": [
+        "fitness",
+        "gym",
+        "training"
+      ],
+      "icon": "barbellOutline",
+      "sections": [
+        {
+          "key": "workouts",
+          "title": "Workouts",
+          "icon": "barbellOutline",
+          "fields": [
+            {
+              "label": "Workout",
+              "fieldName": "workout",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "strength",
+                  "label": "Strength"
+                },
+                {
+                  "value": "cardio",
+                  "label": "Cardio"
+                },
+                {
+                  "value": "mobility",
+                  "label": "Mobility"
+                },
+                {
+                  "value": "sport",
+                  "label": "Sport"
+                }
+              ]
+            },
+            {
+              "label": "Minutes",
+              "fieldName": "minutes",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "exercises",
+          "title": "Exercises",
+          "icon": "fitnessOutline",
+          "fields": [
+            {
+              "label": "Exercise",
+              "fieldName": "exercise",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Sets",
+              "fieldName": "sets",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Reps",
+              "fieldName": "reps",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Weight",
+              "fieldName": "weight",
+              "componentCode": 1,
+              "type": "number"
+            }
+          ],
+          "childOf": [
+            "workouts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health-log",
+      "title": "Health records",
+      "description": "Doctor visits, medications and test results for the whole family.",
+      "category": "health",
+      "tags": [
+        "medical",
+        "family",
+        "appointments"
+      ],
+      "icon": "medkitOutline",
+      "sections": [
+        {
+          "key": "visits",
+          "title": "Visits",
+          "icon": "medkitOutline",
+          "fields": [
+            {
+              "label": "Reason",
+              "fieldName": "reason",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Patient",
+              "fieldName": "patient",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Doctor",
+              "fieldName": "doctor",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Outcome",
+              "fieldName": "outcome",
+              "componentCode": 12
+            },
+            {
+              "label": "Follow-up",
+              "fieldName": "followUp",
+              "componentCode": 8,
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "key": "medications",
+          "title": "Medications",
+          "icon": "bandageOutline",
+          "fields": [
+            {
+              "label": "Medication",
+              "fieldName": "medication",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Patient",
+              "fieldName": "patient",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Dosage",
+              "fieldName": "dosage",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "From",
+              "fieldName": "from",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "To",
+              "fieldName": "to",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "course-planner",
+      "title": "Course planner",
+      "description": "Courses, assignments and exams of the semester.",
+      "category": "learning",
+      "tags": [
+        "school",
+        "university",
+        "homework"
+      ],
+      "icon": "schoolOutline",
+      "sections": [
+        {
+          "key": "courses",
+          "title": "Courses",
+          "icon": "schoolOutline",
+          "fields": [
+            {
+              "label": "Course",
+              "fieldName": "course",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Teacher",
+              "fieldName": "teacher",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Semester",
+              "fieldName": "semester",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Credits",
+              "fieldName": "credits",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Final grade",
+              "fieldName": "finalGrade",
+              "componentCode": 1,
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "key": "assignments",
+          "title": "Assignments & exams",
+          "icon": "documentTextOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "assignment",
+                  "label": "Assignment"
+                },
+                {
+                  "value": "project",
+                  "label": "Project"
+                },
+                {
+                  "value": "quiz",
+                  "label": "Quiz"
+                },
+                {
+                  "value": "exam",
+                  "label": "Exam"
+                }
+              ]
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "toDo",
+                  "label": "To do"
+                },
+                {
+                  "value": "inProgress",
+                  "label": "In progress"
+                },
+                {
+                  "value": "submitted",
+                  "label": "Submitted"
+                },
+                {
+                  "value": "graded",
+                  "label": "Graded"
+                }
+              ]
+            },
+            {
+              "label": "Grade",
+              "fieldName": "grade",
+              "componentCode": 1,
+              "type": "number"
+            }
+          ],
+          "childOf": [
+            "courses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-list",
+      "title": "Reading list",
+      "description": "Books you want to read, are reading and have read, with ratings and notes.",
+      "category": "learning",
+      "tags": [
+        "books",
+        "reading",
+        "reviews"
+      ],
+      "icon": "bookOutline",
+      "sections": [
+        {
+          "key": "books",
+          "title": "Books",
+          "icon": "bookOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Author",
+              "fieldName": "author",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "wantToRead",
+                  "label": "Want to read"
+                },
+                {
+                  "value": "reading",
+                  "label": "Reading"
+                },
+                {
+                  "value": "read",
+                  "label": "Read"
+                },
+                {
+                  "value": "abandoned",
+                  "label": "Abandoned"
+                }
+              ]
+            },
+            {
+              "label": "Rating",
+              "fieldName": "rating",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ]
+            },
+            {
+              "label": "Finished on",
+              "fieldName": "finishedOn",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-literature",
+      "title": "Research literature",
+      "description": "Papers you read for your research, with key findings and citations.",
+      "category": "learning",
+      "tags": [
+        "research",
+        "papers",
+        "academic"
+      ],
+      "icon": "libraryOutline",
+      "sections": [
+        {
+          "key": "papers",
+          "title": "Papers",
+          "icon": "documentTextOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Authors",
+              "fieldName": "authors",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Year",
+              "fieldName": "year",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Journal or venue",
+              "fieldName": "journalOrVenue",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Link",
+              "fieldName": "link",
+              "componentCode": 1,
+              "type": "url"
+            },
+            {
+              "label": "DOI",
+              "fieldName": "doi",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "toRead",
+                  "label": "To read"
+                },
+                {
+                  "value": "reading",
+                  "label": "Reading"
+                },
+                {
+                  "value": "read",
+                  "label": "Read"
+                }
+              ]
+            },
+            {
+              "label": "Key findings",
+              "fieldName": "keyFindings",
+              "componentCode": 12
+            },
+            {
+              "label": "Citation",
+              "fieldName": "citation",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "class-gradebook",
+      "title": "Class gradebook",
+      "description": "For teachers: classes, students and their grades.",
+      "category": "learning",
+      "tags": [
+        "teaching",
+        "grades",
+        "students"
+      ],
+      "icon": "easelOutline",
+      "sections": [
+        {
+          "key": "classes",
+          "title": "Classes",
+          "icon": "easelOutline",
+          "fields": [
+            {
+              "label": "Class",
+              "fieldName": "class",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Subject",
+              "fieldName": "subject",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "School year",
+              "fieldName": "schoolYear",
+              "componentCode": 1,
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "students",
+          "title": "Students",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Parent email",
+              "fieldName": "parentEmail",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "classes"
+          ]
+        },
+        {
+          "key": "grades",
+          "title": "Grades",
+          "icon": "ribbonOutline",
+          "fields": [
+            {
+              "label": "Assessment",
+              "fieldName": "assessment",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Grade",
+              "fieldName": "grade",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Comments",
+              "fieldName": "comments",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "students"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "watchlist",
+      "title": "Movies & series",
+      "description": "What you want to watch and what you thought of it.",
+      "category": "hobbies",
+      "tags": [
+        "movies",
+        "tv",
+        "watchlist"
+      ],
+      "icon": "filmOutline",
+      "sections": [
+        {
+          "key": "titles",
+          "title": "Titles",
+          "icon": "filmOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 5,
+              "options": [
+                {
+                  "value": "movie",
+                  "label": "Movie"
+                },
+                {
+                  "value": "series",
+                  "label": "Series"
+                },
+                {
+                  "value": "documentary",
+                  "label": "Documentary"
+                }
+              ]
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "wantToWatch",
+                  "label": "Want to watch"
+                },
+                {
+                  "value": "watching",
+                  "label": "Watching"
+                },
+                {
+                  "value": "watched",
+                  "label": "Watched"
+                }
+              ]
+            },
+            {
+              "label": "Where to watch",
+              "fieldName": "whereToWatch",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Rating",
+              "fieldName": "rating",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ]
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "collection",
+      "title": "Collection",
+      "description": "Catalog any collection: vinyls, coins, stamps, games, sneakers...",
+      "category": "hobbies",
+      "tags": [
+        "collecting",
+        "catalog",
+        "inventory"
+      ],
+      "icon": "albumsOutline",
+      "sections": [
+        {
+          "key": "items",
+          "title": "Items",
+          "icon": "albumsOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Category",
+              "fieldName": "category",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Year",
+              "fieldName": "year",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Condition",
+              "fieldName": "condition",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "mint",
+                  "label": "Mint"
+                },
+                {
+                  "value": "excellent",
+                  "label": "Excellent"
+                },
+                {
+                  "value": "good",
+                  "label": "Good"
+                },
+                {
+                  "value": "fair",
+                  "label": "Fair"
+                },
+                {
+                  "value": "poor",
+                  "label": "Poor"
+                }
+              ]
+            },
+            {
+              "label": "Purchase price",
+              "fieldName": "purchasePrice",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Estimated value",
+              "fieldName": "estimatedValue",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Acquired on",
+              "fieldName": "acquiredOn",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing-projects",
+      "title": "Writing projects",
+      "description": "Books, stories and articles you are writing, chapter by chapter.",
+      "category": "hobbies",
+      "tags": [
+        "writing",
+        "books",
+        "creative"
+      ],
+      "icon": "createOutline",
+      "sections": [
+        {
+          "key": "projects",
+          "title": "Projects",
+          "icon": "bookOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Genre",
+              "fieldName": "genre",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "novel",
+                  "label": "Novel"
+                },
+                {
+                  "value": "shortStory",
+                  "label": "Short story"
+                },
+                {
+                  "value": "nonFiction",
+                  "label": "Non-fiction"
+                },
+                {
+                  "value": "poetry",
+                  "label": "Poetry"
+                },
+                {
+                  "value": "screenplay",
+                  "label": "Screenplay"
+                }
+              ]
+            },
+            {
+              "label": "Target words",
+              "fieldName": "targetWords",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "idea",
+                  "label": "Idea"
+                },
+                {
+                  "value": "drafting",
+                  "label": "Drafting"
+                },
+                {
+                  "value": "editing",
+                  "label": "Editing"
+                },
+                {
+                  "value": "finished",
+                  "label": "Finished"
+                }
+              ]
+            },
+            {
+              "label": "Synopsis",
+              "fieldName": "synopsis",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "chapters",
+          "title": "Chapters",
+          "icon": "documentTextOutline",
+          "fields": [
+            {
+              "label": "Title",
+              "fieldName": "title",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Number",
+              "fieldName": "number",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Words",
+              "fieldName": "words",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "toWrite",
+                  "label": "To write"
+                },
+                {
+                  "value": "draft",
+                  "label": "Draft"
+                },
+                {
+                  "value": "revised",
+                  "label": "Revised"
+                },
+                {
+                  "value": "final",
+                  "label": "Final"
+                }
+              ]
+            },
+            {
+              "label": "Text",
+              "fieldName": "text",
+              "componentCode": 2
+            }
+          ],
+          "childOf": [
+            "projects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-shoots",
+      "title": "Photo shoots",
+      "description": "Plan shoots, locations, gear and deliveries to clients.",
+      "category": "hobbies",
+      "tags": [
+        "photography",
+        "shoots",
+        "clients"
+      ],
+      "icon": "cameraOutline",
+      "sections": [
+        {
+          "key": "shoots",
+          "title": "Shoots",
+          "icon": "cameraOutline",
+          "fields": [
+            {
+              "label": "Shoot",
+              "fieldName": "shoot",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Client",
+              "fieldName": "client",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Location",
+              "fieldName": "location",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Status",
+              "fieldName": "status",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "planned",
+                  "label": "Planned"
+                },
+                {
+                  "value": "shot",
+                  "label": "Shot"
+                },
+                {
+                  "value": "editing",
+                  "label": "Editing"
+                },
+                {
+                  "value": "delivered",
+                  "label": "Delivered"
+                }
+              ]
+            },
+            {
+              "label": "Price",
+              "fieldName": "price",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Shot list",
+              "fieldName": "shotList",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "event-planning",
+      "title": "Event planning",
+      "description": "Organize an event: tasks, guests and budget.",
+      "category": "community",
+      "tags": [
+        "events",
+        "party",
+        "wedding"
+      ],
+      "icon": "calendarOutline",
+      "sections": [
+        {
+          "key": "events",
+          "title": "Events",
+          "icon": "calendarOutline",
+          "fields": [
+            {
+              "label": "Event",
+              "fieldName": "event",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Venue",
+              "fieldName": "venue",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Budget",
+              "fieldName": "budget",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "tasks",
+          "title": "Tasks",
+          "icon": "checkboxOutline",
+          "fields": [
+            {
+              "label": "Task",
+              "fieldName": "task",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Responsible",
+              "fieldName": "responsible",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Due date",
+              "fieldName": "dueDate",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Cost",
+              "fieldName": "cost",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Done",
+              "fieldName": "done",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "events"
+          ]
+        },
+        {
+          "key": "guests",
+          "title": "Guests",
+          "icon": "peopleOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "RSVP",
+              "fieldName": "rsvp",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "invited",
+                  "label": "Invited"
+                },
+                {
+                  "value": "attending",
+                  "label": "Attending"
+                },
+                {
+                  "value": "notAttending",
+                  "label": "Not attending"
+                },
+                {
+                  "value": "maybe",
+                  "label": "Maybe"
+                }
+              ]
+            },
+            {
+              "label": "Plus ones",
+              "fieldName": "plusOnes",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Dietary needs",
+              "fieldName": "dietaryNeeds",
+              "componentCode": 12
+            }
+          ],
+          "childOf": [
+            "events"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "members",
+      "title": "Club members",
+      "description": "Members of an association or club, with membership fees.",
+      "category": "community",
+      "tags": [
+        "association",
+        "membership",
+        "fees"
+      ],
+      "icon": "idCardOutline",
+      "sections": [
+        {
+          "key": "members",
+          "title": "Members",
+          "icon": "idCardOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Member since",
+              "fieldName": "memberSince",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Membership",
+              "fieldName": "membership",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "standard",
+                  "label": "Standard"
+                },
+                {
+                  "value": "reduced",
+                  "label": "Reduced"
+                },
+                {
+                  "value": "honorary",
+                  "label": "Honorary"
+                },
+                {
+                  "value": "board",
+                  "label": "Board"
+                }
+              ]
+            },
+            {
+              "label": "Fee paid",
+              "fieldName": "feePaid",
+              "componentCode": 3
+            },
+            {
+              "label": "Notes",
+              "fieldName": "notes",
+              "componentCode": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volunteers",
+      "title": "Volunteers",
+      "description": "Volunteers, their availability and the shifts they cover.",
+      "category": "community",
+      "tags": [
+        "nonprofit",
+        "shifts",
+        "people"
+      ],
+      "icon": "handLeftOutline",
+      "sections": [
+        {
+          "key": "volunteers",
+          "title": "Volunteers",
+          "icon": "handLeftOutline",
+          "fields": [
+            {
+              "label": "Full name",
+              "fieldName": "fullName",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Phone",
+              "fieldName": "phone",
+              "componentCode": 1,
+              "type": "tel"
+            },
+            {
+              "label": "Skills",
+              "fieldName": "skills",
+              "componentCode": 12
+            },
+            {
+              "label": "Availability",
+              "fieldName": "availability",
+              "componentCode": 12
+            }
+          ]
+        },
+        {
+          "key": "shifts",
+          "title": "Shifts",
+          "icon": "timeOutline",
+          "fields": [
+            {
+              "label": "Activity",
+              "fieldName": "activity",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Start",
+              "fieldName": "start",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "End",
+              "fieldName": "end",
+              "componentCode": 9,
+              "type": "datetime-local"
+            },
+            {
+              "label": "Place",
+              "fieldName": "place",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Confirmed",
+              "fieldName": "confirmed",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "volunteers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "donations",
+      "title": "Donations",
+      "description": "Donors and the donations they make, for fundraising and receipts.",
+      "category": "community",
+      "tags": [
+        "nonprofit",
+        "fundraising",
+        "donors"
+      ],
+      "icon": "heartOutline",
+      "sections": [
+        {
+          "key": "donors",
+          "title": "Donors",
+          "icon": "personOutline",
+          "fields": [
+            {
+              "label": "Name",
+              "fieldName": "name",
+              "componentCode": 1,
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "fieldName": "email",
+              "componentCode": 1,
+              "type": "email"
+            },
+            {
+              "label": "Address",
+              "fieldName": "address",
+              "componentCode": 12
+            },
+            {
+              "label": "Type",
+              "fieldName": "type",
+              "componentCode": 5,
+              "options": [
+                {
+                  "value": "individual",
+                  "label": "Individual"
+                },
+                {
+                  "value": "company",
+                  "label": "Company"
+                },
+                {
+                  "value": "foundation",
+                  "label": "Foundation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "donations",
+          "title": "Donations",
+          "icon": "heartOutline",
+          "fields": [
+            {
+              "label": "Date",
+              "fieldName": "date",
+              "componentCode": 8,
+              "type": "date"
+            },
+            {
+              "label": "Amount",
+              "fieldName": "amount",
+              "componentCode": 1,
+              "type": "number"
+            },
+            {
+              "label": "Method",
+              "fieldName": "method",
+              "componentCode": 4,
+              "options": [
+                {
+                  "value": "bankTransfer",
+                  "label": "Bank transfer"
+                },
+                {
+                  "value": "card",
+                  "label": "Card"
+                },
+                {
+                  "value": "cash",
+                  "label": "Cash"
+                },
+                {
+                  "value": "paypal",
+                  "label": "PayPal"
+                }
+              ]
+            },
+            {
+              "label": "Campaign",
+              "fieldName": "campaign",
+              "componentCode": 1,
+              "type": "text"
+            },
+            {
+              "label": "Receipt sent",
+              "fieldName": "receiptSent",
+              "componentCode": 3
+            }
+          ],
+          "childOf": [
+            "donors"
+          ]
+        }
+      ]
+    }
+  ]
+}
