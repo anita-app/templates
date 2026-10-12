@@ -10,7 +10,7 @@ without releasing the app.
 
 - Edit `templates.json` and open a pull request. Editors with JSON Schema support validate it against
   [`templates.schema.json`](templates.schema.json).
-- Templates contain only the structure (sections and fields), never records.
+- `samples` holds a few realistic example records per section, which users can choose to start with (see below).
 - Keep `id`s of templates, categories and section `key`s stable.
 - `fieldName` is the key under which values are saved: lower camelCase, unique within a section, never `id`,
   `createdAt`, `updatedAt`, `parentsInfo`, `createdBy`.
@@ -18,6 +18,26 @@ without releasing the app.
 - Icons are [Ionicons](https://ionic.io/ionicons) names in camelCase with the `Outline` suffix, e.g. `bookOutline`.
 - `childOf` lists the keys of parent sections, which must come earlier in the same template. Records of the child
   section can then be linked to records of the parent (e.g. Tasks of a Project).
+
+## Example records (`samples`)
+
+When creating a project from a template, users can add some example records to see how it works. Keep them few
+(two or three per section), realistic and neutral: a brownies recipe, a Michael Crichton novel, `example.com` emails.
+
+```json
+"samples": {
+  "authors": [{ "ref": "crichton", "values": { "name": "Michael Crichton" } }],
+  "books": [{ "values": { "title": "Jurassic Park", "status": "read", "finishedOn": "@today-40" }, "parents": ["authors:crichton"] }]
+}
+```
+
+- `values` are keyed by `fieldName`. Drop-down lists and alternative choices take the option `value`; check boxes
+  `true`/`false`; numbers are numbers.
+- Dates are `YYYY-MM-DD`, or relative to the day the project is created: `@today`, `@today+7`, `@today-3`. They are
+  adapted to the field type (date, month, date & time).
+- Long texts are plain text, one paragraph per line.
+- `ref` names a record so that records of child sections can link to it with `parents: ["sectionKey:ref"]`. The
+  section must be in the child's `childOf`.
 
 ## Field types (`componentCode`)
 

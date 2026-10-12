@@ -3,26 +3,46 @@
   "$id": "https://raw.githubusercontent.com/anita-app/templates/main/templates.schema.json",
   "title": "Anita project templates",
   "type": "object",
-  "required": ["schemaVersion", "categories", "templates"],
+  "required": [
+    "schemaVersion",
+    "categories",
+    "templates"
+  ],
   "properties": {
-    "$schema": { "type": "string" },
-    "schemaVersion": { "const": 1 },
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
     "categories": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "label"],
+        "required": [
+          "id",
+          "label"
+        ],
         "properties": {
-          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-          "label": { "type": "string" },
-          "icon": { "$ref": "#/$defs/icon" }
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "icon": {
+            "$ref": "#/$defs/icon"
+          }
         },
         "additionalProperties": false
       }
     },
     "templates": {
       "type": "array",
-      "items": { "$ref": "#/$defs/template" }
+      "items": {
+        "$ref": "#/$defs/template"
+      }
     }
   },
   "additionalProperties": false,
@@ -33,42 +53,149 @@
     },
     "template": {
       "type": "object",
-      "required": ["id", "title", "description", "category", "sections"],
+      "required": [
+        "id",
+        "title",
+        "description",
+        "category",
+        "sections"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "category": { "type": "string", "description": "id of one of the categories" },
-        "tags": { "type": "array", "items": { "type": "string" } },
-        "icon": { "$ref": "#/$defs/icon" },
-        "sections": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/section" } }
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "description": "id of one of the categories"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "icon": {
+          "$ref": "#/$defs/icon"
+        },
+        "sections": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/section"
+          }
+        },
+        "samples": {
+          "type": "object",
+          "description": "Example records the user can choose to start with, by section key. Parents must be listed before their children.",
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9]+$"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/sample"
+            }
+          }
+        }
       },
       "additionalProperties": false
     },
     "section": {
       "type": "object",
-      "required": ["key", "title", "fields"],
+      "required": [
+        "key",
+        "title",
+        "fields"
+      ],
       "properties": {
-        "key": { "type": "string", "pattern": "^[A-Za-z0-9]+$", "description": "Unique within the template; used by childOf." },
-        "title": { "type": "string" },
-        "icon": { "$ref": "#/$defs/icon" },
-        "childOf": { "type": "array", "items": { "type": "string" }, "description": "Keys of parent sections: records of this section can be linked to records of those sections." },
-        "fields": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/field" } }
+        "key": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9]+$",
+          "description": "Unique within the template; used by childOf."
+        },
+        "title": {
+          "type": "string"
+        },
+        "icon": {
+          "$ref": "#/$defs/icon"
+        },
+        "childOf": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Keys of parent sections: records of this section can be linked to records of those sections."
+        },
+        "fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/field"
+          }
+        }
       },
       "additionalProperties": false
     },
     "field": {
       "type": "object",
-      "required": ["label", "fieldName", "componentCode"],
+      "required": [
+        "label",
+        "fieldName",
+        "componentCode"
+      ],
       "properties": {
-        "label": { "type": "string" },
-        "fieldName": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9]*$", "not": { "enum": ["id", "createdAt", "updatedAt", "parentsInfo", "createdBy"] } },
+        "label": {
+          "type": "string"
+        },
+        "fieldName": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9]*$",
+          "not": {
+            "enum": [
+              "id",
+              "createdAt",
+              "updatedAt",
+              "parentsInfo",
+              "createdBy"
+            ]
+          }
+        },
         "componentCode": {
-          "enum": [1, 2, 3, 4, 5, 8, 9, 12],
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            8,
+            9,
+            12
+          ],
           "description": "1 short text, 2 long text (rich), 3 check box, 4 drop-down list, 5 alternative choice, 8 date, 9 date & time, 12 plain long text"
         },
         "type": {
-          "enum": ["text", "email", "number", "password", "color", "range", "tel", "url", "date", "month", "week", "datetime-local", "time"],
+          "enum": [
+            "text",
+            "email",
+            "number",
+            "password",
+            "color",
+            "range",
+            "tel",
+            "url",
+            "date",
+            "month",
+            "week",
+            "datetime-local",
+            "time"
+          ],
           "description": "1: text|email|number|password|color|range|tel|url; 8: date|month|week; 9: datetime-local|time"
         },
         "options": {
@@ -76,12 +203,63 @@
           "description": "Choices of drop-down lists (4) and alternative choices (5).",
           "items": {
             "type": "object",
-            "required": ["value", "label"],
-            "properties": { "value": { "type": ["string", "number"] }, "label": { "type": "string" } },
+            "required": [
+              "value",
+              "label"
+            ],
+            "properties": {
+              "value": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "label": {
+                "type": "string"
+              }
+            },
             "additionalProperties": false
           }
         },
-        "required": { "type": "boolean" }
+        "required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "sample": {
+      "type": "object",
+      "required": [
+        "values"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9-]+$",
+          "description": "Name used by other samples to link to this record, unique within the section."
+        },
+        "values": {
+          "type": "object",
+          "description": "Values by fieldName. Drop-down and alternative choices use the option value. Dates are YYYY-MM-DD or relative to the day the project is created: @today, @today+7, @today-3. Long texts (2 and 12) are plain text, one paragraph per line.",
+          "propertyNames": {
+            "pattern": "^[A-Za-z][A-Za-z0-9]*$"
+          },
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        },
+        "parents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+:[A-Za-z0-9-]+$"
+          },
+          "description": "Linked parent records as sectionKey:ref; the section must be in childOf."
+        }
       },
       "additionalProperties": false
     }

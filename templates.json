@@ -259,7 +259,107 @@
             "team"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "team": [
+          {
+            "values": {
+              "name": "Anna Rossi",
+              "role": "Designer",
+              "email": "anna@example.com"
+            },
+            "ref": "anna"
+          },
+          {
+            "values": {
+              "name": "Marc Dubois",
+              "role": "Developer",
+              "email": "marc@example.com"
+            },
+            "ref": "marc"
+          }
+        ],
+        "projects": [
+          {
+            "values": {
+              "name": "New company website",
+              "status": "inProgress",
+              "startDate": "@today-20",
+              "dueDate": "@today+40",
+              "description": "Redesign the website with the new brand and a faster CMS."
+            },
+            "ref": "site",
+            "parents": [
+              "team:anna"
+            ]
+          }
+        ],
+        "milestones": [
+          {
+            "values": {
+              "milestone": "Design approved",
+              "dueDate": "@today+5",
+              "reached": false
+            },
+            "ref": "design",
+            "parents": [
+              "projects:site"
+            ]
+          },
+          {
+            "values": {
+              "milestone": "Go live",
+              "dueDate": "@today+40"
+            },
+            "ref": "launch",
+            "parents": [
+              "projects:site"
+            ]
+          }
+        ],
+        "tasks": [
+          {
+            "values": {
+              "task": "Homepage mock-up",
+              "status": "done",
+              "priority": "high",
+              "dueDate": "@today-3",
+              "estimatedHours": 12
+            },
+            "parents": [
+              "projects:site",
+              "milestones:design",
+              "team:anna"
+            ]
+          },
+          {
+            "values": {
+              "task": "Set up the CMS",
+              "status": "doing",
+              "priority": "medium",
+              "dueDate": "@today+10",
+              "estimatedHours": 16
+            },
+            "parents": [
+              "projects:site",
+              "milestones:launch",
+              "team:marc"
+            ]
+          },
+          {
+            "values": {
+              "task": "Write the About page",
+              "status": "toDo",
+              "priority": "low",
+              "dueDate": "@today+20"
+            },
+            "parents": [
+              "projects:site",
+              "milestones:launch"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "todo-list",
@@ -371,7 +471,86 @@
             "todos"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "lists": [
+          {
+            "values": {
+              "list": "Home",
+              "color": "#4f9d69"
+            },
+            "ref": "home"
+          },
+          {
+            "values": {
+              "list": "Work",
+              "color": "#3b6fd8"
+            },
+            "ref": "work"
+          }
+        ],
+        "todos": [
+          {
+            "values": {
+              "task": "Organize Sara's birthday party",
+              "priority": "high",
+              "dueDate": "@today+6"
+            },
+            "ref": "party",
+            "parents": [
+              "lists:home"
+            ]
+          },
+          {
+            "values": {
+              "task": "Renew the car insurance",
+              "priority": "medium",
+              "dueDate": "@today+12"
+            },
+            "parents": [
+              "lists:home"
+            ]
+          },
+          {
+            "values": {
+              "task": "Prepare the quarterly report",
+              "priority": "urgent",
+              "dueDate": "@today+2",
+              "notes": "Numbers from the finance dashboard."
+            },
+            "parents": [
+              "lists:work"
+            ]
+          }
+        ],
+        "subtasks": [
+          {
+            "values": {
+              "subTask": "Book the restaurant",
+              "done": true
+            },
+            "parents": [
+              "todos:party"
+            ]
+          },
+          {
+            "values": {
+              "subTask": "Order the cake"
+            },
+            "parents": [
+              "todos:party"
+            ]
+          },
+          {
+            "values": {
+              "subTask": "Send the invitations"
+            },
+            "parents": [
+              "todos:party"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "meeting-notes",
@@ -522,7 +701,77 @@
             "people"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "people": [
+          {
+            "values": {
+              "name": "Laura Chen",
+              "organization": "Marketing",
+              "email": "laura@example.com"
+            },
+            "ref": "laura"
+          },
+          {
+            "values": {
+              "name": "Tom Becker",
+              "organization": "Sales",
+              "email": "tom@example.com"
+            },
+            "ref": "tom"
+          }
+        ],
+        "meetings": [
+          {
+            "values": {
+              "title": "Spring campaign kick-off",
+              "date": "@today-2",
+              "type": "teamMeeting",
+              "agenda": "Goals\nBudget\nTimeline",
+              "notes": "We agreed to focus on returning customers and to test two landing pages."
+            },
+            "ref": "kickoff",
+            "parents": [
+              "people:laura",
+              "people:tom"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "values": {
+              "decision": "Budget of 15,000 € for the campaign",
+              "rationale": "Same as last year, with more on social ads."
+            },
+            "parents": [
+              "meetings:kickoff"
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "values": {
+              "action": "Draft the landing page copy",
+              "dueDate": "@today+5"
+            },
+            "parents": [
+              "meetings:kickoff",
+              "people:laura"
+            ]
+          },
+          {
+            "values": {
+              "action": "List the top 50 returning customers",
+              "dueDate": "@today+3",
+              "done": true
+            },
+            "parents": [
+              "meetings:kickoff",
+              "people:tom"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "okr",
@@ -688,7 +937,72 @@
             "keyResults"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "teams": [
+          {
+            "values": {
+              "team": "Growth",
+              "lead": "Priya Shah"
+            },
+            "ref": "growth"
+          }
+        ],
+        "objectives": [
+          {
+            "values": {
+              "objective": "Make onboarding delightful",
+              "quarter": "q3",
+              "year": 2026,
+              "whyItMatters": "Most users who leave do so in their first week."
+            },
+            "ref": "o1",
+            "parents": [
+              "teams:growth"
+            ]
+          }
+        ],
+        "keyResults": [
+          {
+            "values": {
+              "keyResult": "Week-1 retention",
+              "startValue": 38,
+              "targetValue": 50,
+              "currentValue": 43,
+              "confidence": "onTrack"
+            },
+            "ref": "kr1",
+            "parents": [
+              "objectives:o1"
+            ]
+          },
+          {
+            "values": {
+              "keyResult": "Time to first project (minutes)",
+              "startValue": 12,
+              "targetValue": 3,
+              "currentValue": 8,
+              "confidence": "atRisk"
+            },
+            "ref": "kr2",
+            "parents": [
+              "objectives:o1"
+            ]
+          }
+        ],
+        "checkIns": [
+          {
+            "values": {
+              "date": "@today-7",
+              "value": 43,
+              "comment": "Templates are helping."
+            },
+            "parents": [
+              "keyResults:kr1"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "content-calendar",
@@ -883,7 +1197,64 @@
             "channels"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "channels": [
+          {
+            "values": {
+              "channel": "Company blog",
+              "type": "blog",
+              "link": "https://example.com/blog"
+            },
+            "ref": "blog"
+          },
+          {
+            "values": {
+              "channel": "Instagram",
+              "type": "instagram"
+            },
+            "ref": "ig"
+          }
+        ],
+        "campaigns": [
+          {
+            "values": {
+              "campaign": "Summer launch",
+              "from": "@today",
+              "to": "@today+30",
+              "goal": "Present the new product line."
+            },
+            "ref": "summer"
+          }
+        ],
+        "content": [
+          {
+            "values": {
+              "title": "10 ideas for your summer garden",
+              "type": "article",
+              "status": "drafting",
+              "author": "Giulia",
+              "publishDate": "@today+7"
+            },
+            "parents": [
+              "campaigns:summer",
+              "channels:blog"
+            ]
+          },
+          {
+            "values": {
+              "title": "Behind the scenes of the photo shoot",
+              "type": "socialPost",
+              "status": "scheduled",
+              "publishDate": "@today+2"
+            },
+            "parents": [
+              "campaigns:summer",
+              "channels:ig"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "bug-tracker",
@@ -1080,7 +1451,77 @@
             "bugs"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "components": [
+          {
+            "values": {
+              "component": "Checkout",
+              "owner": "Sam"
+            },
+            "ref": "checkout"
+          },
+          {
+            "values": {
+              "component": "Search",
+              "owner": "Lena"
+            },
+            "ref": "search"
+          }
+        ],
+        "releases": [
+          {
+            "values": {
+              "version": "2.4.0",
+              "releaseDate": "@today+10",
+              "status": "testing"
+            },
+            "ref": "v24"
+          }
+        ],
+        "bugs": [
+          {
+            "values": {
+              "title": "Coupon code ignored on mobile",
+              "severity": "critical",
+              "status": "inProgress",
+              "reportedBy": "Customer support",
+              "assignee": "Sam",
+              "stepsToReproduce": "1. Add a product\n2. Enter SUMMER10 on a phone\n3. Pay",
+              "expectedResult": "10% discount",
+              "actualResult": "Full price"
+            },
+            "ref": "coupon",
+            "parents": [
+              "components:checkout",
+              "releases:v24"
+            ]
+          },
+          {
+            "values": {
+              "title": "Accents break the search",
+              "severity": "major",
+              "status": "new",
+              "reportedBy": "Lena"
+            },
+            "parents": [
+              "components:search"
+            ]
+          }
+        ],
+        "updates": [
+          {
+            "values": {
+              "update": "Reproduced on iOS Safari only",
+              "date": "@today-1",
+              "author": "Sam"
+            },
+            "parents": [
+              "bugs:coupon"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "product-roadmap",
@@ -1270,7 +1711,67 @@
             "features"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "themes": [
+          {
+            "values": {
+              "theme": "Collaboration",
+              "description": "Work together on the same data."
+            },
+            "ref": "collab"
+          }
+        ],
+        "releases": [
+          {
+            "values": {
+              "version": "3.0",
+              "targetDate": "@today+60",
+              "status": "planned"
+            },
+            "ref": "r3"
+          }
+        ],
+        "features": [
+          {
+            "values": {
+              "feature": "Comments on records",
+              "status": "planned",
+              "impact": "high",
+              "effort": "medium",
+              "description": "Discuss a record without leaving it."
+            },
+            "ref": "comments",
+            "parents": [
+              "themes:collab",
+              "releases:r3"
+            ]
+          },
+          {
+            "values": {
+              "feature": "Activity history",
+              "status": "idea",
+              "impact": "medium",
+              "effort": "large"
+            },
+            "parents": [
+              "themes:collab"
+            ]
+          }
+        ],
+        "feedback": [
+          {
+            "values": {
+              "request": "We need to leave notes to colleagues",
+              "customer": "Studio Bianchi",
+              "date": "@today-12"
+            },
+            "parents": [
+              "features:comments"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "time-tracking",
@@ -1449,7 +1950,70 @@
             "clients"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "clients": [
+          {
+            "values": {
+              "client": "ACME Corp",
+              "contactPerson": "Jane Doe",
+              "email": "jane@acme.example",
+              "hourlyRate": 85
+            },
+            "ref": "acme"
+          }
+        ],
+        "projects": [
+          {
+            "values": {
+              "project": "Mobile app redesign",
+              "status": "active",
+              "budgetHours": 120
+            },
+            "ref": "app",
+            "parents": [
+              "clients:acme"
+            ]
+          }
+        ],
+        "timeEntries": [
+          {
+            "values": {
+              "activity": "User interviews",
+              "date": "@today-3",
+              "hours": 4,
+              "billable": true
+            },
+            "parents": [
+              "projects:app"
+            ]
+          },
+          {
+            "values": {
+              "activity": "Wireframes",
+              "date": "@today-1",
+              "hours": 6.5,
+              "billable": true
+            },
+            "parents": [
+              "projects:app"
+            ]
+          }
+        ],
+        "invoices": [
+          {
+            "values": {
+              "number": "2026-014",
+              "issueDate": "@today-30",
+              "amount": 2550,
+              "status": "paid"
+            },
+            "parents": [
+              "clients:acme"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "crm",
@@ -1689,7 +2253,96 @@
             "deals"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "companies": [
+          {
+            "values": {
+              "company": "ACME Corp",
+              "industry": "manufacturing",
+              "website": "https://acme.example",
+              "phone": "+1 555 0100",
+              "city": "Chicago"
+            },
+            "ref": "acme"
+          },
+          {
+            "values": {
+              "company": "Bright Studio",
+              "industry": "services",
+              "city": "Berlin"
+            },
+            "ref": "bright"
+          }
+        ],
+        "contacts": [
+          {
+            "values": {
+              "fullName": "Jane Doe",
+              "role": "Purchasing manager",
+              "email": "jane@acme.example",
+              "phone": "+1 555 0101"
+            },
+            "ref": "jane",
+            "parents": [
+              "companies:acme"
+            ]
+          },
+          {
+            "values": {
+              "fullName": "Max Weber",
+              "role": "Founder",
+              "email": "max@bright.example"
+            },
+            "ref": "max",
+            "parents": [
+              "companies:bright"
+            ]
+          }
+        ],
+        "deals": [
+          {
+            "values": {
+              "deal": "Yearly maintenance contract",
+              "value": 18000,
+              "stage": "negotiation",
+              "expectedClose": "@today+15",
+              "nextStep": "Send the revised offer"
+            },
+            "ref": "renewal",
+            "parents": [
+              "companies:acme",
+              "contacts:jane"
+            ]
+          },
+          {
+            "values": {
+              "deal": "Website redesign",
+              "value": 7500,
+              "stage": "proposal",
+              "expectedClose": "@today+30"
+            },
+            "parents": [
+              "companies:bright",
+              "contacts:max"
+            ]
+          }
+        ],
+        "activities": [
+          {
+            "values": {
+              "subject": "Call about pricing",
+              "type": "call",
+              "when": "@today-2",
+              "summary": "They want a 3-year option."
+            },
+            "parents": [
+              "contacts:jane",
+              "deals:renewal"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "sales-pipeline",
@@ -1879,7 +2532,59 @@
             "leads"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "salespeople": [
+          {
+            "values": {
+              "name": "Ella Martin",
+              "email": "ella@example.com",
+              "monthlyTarget": 40000
+            },
+            "ref": "ella"
+          }
+        ],
+        "leads": [
+          {
+            "values": {
+              "lead": "Mario Bianchi",
+              "company": "Fresh Foods",
+              "email": "mario@freshfoods.example",
+              "source": "event",
+              "stage": "qualified",
+              "estimatedValue": 12000
+            },
+            "ref": "fresh",
+            "parents": [
+              "salespeople:ella"
+            ]
+          },
+          {
+            "values": {
+              "lead": "Sofia Ruiz",
+              "company": "Ruiz Logistics",
+              "source": "website",
+              "stage": "new",
+              "estimatedValue": 5000
+            },
+            "parents": [
+              "salespeople:ella"
+            ]
+          }
+        ],
+        "followUps": [
+          {
+            "values": {
+              "action": "Demo call",
+              "date": "@today+2",
+              "outcome": "meetingBooked"
+            },
+            "parents": [
+              "leads:fresh"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "invoices",
@@ -2066,7 +2771,71 @@
             "invoices"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "clients": [
+          {
+            "values": {
+              "client": "ACME Corp",
+              "vatNumber": "US123456789",
+              "email": "billing@acme.example",
+              "address": "1 Main Street, Chicago"
+            },
+            "ref": "acme"
+          }
+        ],
+        "invoices": [
+          {
+            "values": {
+              "number": "2026-021",
+              "issueDate": "@today-5",
+              "dueDate": "@today+25",
+              "total": 1830,
+              "status": "sent"
+            },
+            "ref": "inv",
+            "parents": [
+              "clients:acme"
+            ]
+          }
+        ],
+        "lines": [
+          {
+            "values": {
+              "description": "Consulting, March",
+              "quantity": 12,
+              "unitPrice": 120,
+              "vatRate": 22
+            },
+            "parents": [
+              "invoices:inv"
+            ]
+          },
+          {
+            "values": {
+              "description": "Travel expenses",
+              "quantity": 1,
+              "unitPrice": 60,
+              "vatRate": 22
+            },
+            "parents": [
+              "invoices:inv"
+            ]
+          }
+        ],
+        "payments": [
+          {
+            "values": {
+              "date": "@today-1",
+              "amount": 900,
+              "method": "bankTransfer"
+            },
+            "parents": [
+              "invoices:inv"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "inventory",
@@ -2226,7 +2995,77 @@
             "locations"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "categories": [
+          {
+            "values": {
+              "category": "Office supplies"
+            },
+            "ref": "office"
+          }
+        ],
+        "suppliers": [
+          {
+            "values": {
+              "supplier": "PaperCo",
+              "email": "orders@paperco.example"
+            },
+            "ref": "paper"
+          }
+        ],
+        "locations": [
+          {
+            "values": {
+              "location": "Main warehouse",
+              "address": "Via Roma 10, Milan"
+            },
+            "ref": "wh"
+          }
+        ],
+        "products": [
+          {
+            "values": {
+              "product": "A4 paper, 500 sheets",
+              "sku": "PAP-A4-500",
+              "quantityInStock": 120,
+              "minimumStock": 50,
+              "unitPrice": 4.9
+            },
+            "ref": "a4",
+            "parents": [
+              "categories:office",
+              "suppliers:paper"
+            ]
+          },
+          {
+            "values": {
+              "product": "Blue pens, box of 50",
+              "sku": "PEN-BLU-50",
+              "quantityInStock": 8,
+              "minimumStock": 10,
+              "unitPrice": 12
+            },
+            "parents": [
+              "categories:office"
+            ]
+          }
+        ],
+        "movements": [
+          {
+            "values": {
+              "reason": "Monthly delivery",
+              "date": "@today-4",
+              "direction": "in",
+              "quantity": 80
+            },
+            "parents": [
+              "products:a4",
+              "locations:wh"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "suppliers",
@@ -2418,7 +3257,61 @@
             "products"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "suppliers": [
+          {
+            "values": {
+              "supplier": "Highland Coffee Traders",
+              "contactPerson": "Luis Ortega",
+              "email": "luis@highland.example",
+              "rating": "excellent"
+            },
+            "ref": "beans"
+          }
+        ],
+        "products": [
+          {
+            "values": {
+              "product": "Arabica beans 1 kg",
+              "supplierCode": "HCT-AR-1",
+              "price": 18.5,
+              "leadTimeDays": 7
+            },
+            "ref": "arabica",
+            "parents": [
+              "suppliers:beans"
+            ]
+          }
+        ],
+        "orders": [
+          {
+            "values": {
+              "orderNumber": "PO-0042",
+              "orderDate": "@today-3",
+              "expectedDelivery": "@today+4",
+              "status": "ordered"
+            },
+            "ref": "po",
+            "parents": [
+              "suppliers:beans"
+            ]
+          }
+        ],
+        "orderLines": [
+          {
+            "values": {
+              "item": "Arabica beans 1 kg",
+              "quantity": 40,
+              "unitPrice": 18.5
+            },
+            "parents": [
+              "orders:po",
+              "products:arabica"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "support-tickets",
@@ -2632,7 +3525,58 @@
             "tickets"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "customers": [
+          {
+            "values": {
+              "name": "Emma Wilson",
+              "email": "emma@example.com",
+              "company": "Wilson & Co",
+              "plan": "premium"
+            },
+            "ref": "emma"
+          }
+        ],
+        "agents": [
+          {
+            "values": {
+              "name": "Dan Kim",
+              "email": "dan@example.com"
+            },
+            "ref": "dan"
+          }
+        ],
+        "tickets": [
+          {
+            "values": {
+              "subject": "Cannot export my data to CSV",
+              "channel": "email",
+              "priority": "high",
+              "status": "waitingForCustomer",
+              "request": "The export button does nothing."
+            },
+            "ref": "t1",
+            "parents": [
+              "customers:emma",
+              "agents:dan"
+            ]
+          }
+        ],
+        "replies": [
+          {
+            "values": {
+              "summary": "Asked for browser version",
+              "when": "@today-1",
+              "from": "agent",
+              "message": "Hi Emma, which browser are you using?"
+            },
+            "parents": [
+              "tickets:t1"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "equipment",
@@ -2797,7 +3741,57 @@
             "assets"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "people": [
+          {
+            "values": {
+              "name": "Ines Moreau",
+              "department": "Design",
+              "email": "ines@example.com"
+            },
+            "ref": "ines"
+          }
+        ],
+        "locations": [
+          {
+            "values": {
+              "location": "Head office"
+            },
+            "ref": "hq"
+          }
+        ],
+        "assets": [
+          {
+            "values": {
+              "name": "MacBook Pro 14\"",
+              "type": "laptop",
+              "serialNumber": "C02XYZ123",
+              "purchaseDate": "@today-400",
+              "purchasePrice": 2299,
+              "warrantyUntil": "@today+330"
+            },
+            "ref": "mbp",
+            "parents": [
+              "people:ines",
+              "locations:hq"
+            ]
+          }
+        ],
+        "maintenance": [
+          {
+            "values": {
+              "intervention": "Battery replacement",
+              "date": "@today-30",
+              "cost": 0,
+              "notes": "Covered by warranty."
+            },
+            "parents": [
+              "assets:mbp"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "real-estate",
@@ -3054,7 +4048,59 @@
             "clients"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "owners": [
+          {
+            "values": {
+              "name": "Paolo Rossi",
+              "phone": "+39 333 1234567"
+            },
+            "ref": "rossi"
+          }
+        ],
+        "properties": [
+          {
+            "values": {
+              "address": "Via Garibaldi 12, Turin",
+              "type": "apartment",
+              "contract": "sale",
+              "price": 245000,
+              "squareMeters": 85,
+              "rooms": 3,
+              "status": "available",
+              "description": "Bright third floor with balcony, close to the metro."
+            },
+            "ref": "flat",
+            "parents": [
+              "owners:rossi"
+            ]
+          }
+        ],
+        "clients": [
+          {
+            "values": {
+              "name": "Hannah Lee",
+              "phone": "+39 340 7654321",
+              "budget": 260000,
+              "lookingFor": "Three rooms, near public transport."
+            },
+            "ref": "lee"
+          }
+        ],
+        "viewings": [
+          {
+            "values": {
+              "summary": "First viewing",
+              "date": "@today+2"
+            },
+            "parents": [
+              "properties:flat",
+              "clients:lee"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "recruiting",
@@ -3284,7 +4330,70 @@
             "candidates"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "departments": [
+          {
+            "values": {
+              "department": "Engineering",
+              "hiringManager": "Olga Petrova"
+            },
+            "ref": "eng"
+          }
+        ],
+        "positions": [
+          {
+            "values": {
+              "jobTitle": "Frontend developer",
+              "status": "open",
+              "openingDate": "@today-14",
+              "description": "React and TypeScript, hybrid work."
+            },
+            "ref": "fe",
+            "parents": [
+              "departments:eng"
+            ]
+          }
+        ],
+        "candidates": [
+          {
+            "values": {
+              "fullName": "Ahmed Karim",
+              "email": "ahmed@example.com",
+              "stage": "interview",
+              "cvLink": "https://example.com/cv/ahmed"
+            },
+            "ref": "ahmed",
+            "parents": [
+              "positions:fe"
+            ]
+          },
+          {
+            "values": {
+              "fullName": "Julia Novak",
+              "email": "julia@example.com",
+              "stage": "screening"
+            },
+            "parents": [
+              "positions:fe"
+            ]
+          }
+        ],
+        "interviews": [
+          {
+            "values": {
+              "interviewer": "Olga Petrova",
+              "date": "@today-1",
+              "rating": "4",
+              "recommendation": "hire",
+              "feedback": "Strong on accessibility."
+            },
+            "parents": [
+              "candidates:ahmed"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "team-directory",
@@ -3386,7 +4495,55 @@
             "teams"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "departments": [
+          {
+            "values": {
+              "department": "Operations",
+              "head": "Karen Lopez"
+            },
+            "ref": "ops"
+          }
+        ],
+        "teams": [
+          {
+            "values": {
+              "team": "Customer support",
+              "mission": "Answer every customer within a day."
+            },
+            "ref": "support",
+            "parents": [
+              "departments:ops"
+            ]
+          }
+        ],
+        "people": [
+          {
+            "values": {
+              "fullName": "Dan Kim",
+              "role": "Support lead",
+              "email": "dan@example.com",
+              "startDate": "@today-700",
+              "skills": "Zendesk, Korean, SQL"
+            },
+            "parents": [
+              "teams:support"
+            ]
+          },
+          {
+            "values": {
+              "fullName": "Rita Silva",
+              "role": "Support agent",
+              "email": "rita@example.com",
+              "skills": "Portuguese, Spanish"
+            },
+            "parents": [
+              "teams:support"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "time-off",
@@ -3525,7 +4682,41 @@
             }
           ]
         }
-      ]
+      ],
+      "samples": {
+        "people": [
+          {
+            "values": {
+              "name": "Marco Ferri",
+              "team": "Sales",
+              "daysPerYear": 25
+            },
+            "ref": "marco"
+          }
+        ],
+        "requests": [
+          {
+            "values": {
+              "type": "vacation",
+              "from": "@today+20",
+              "to": "@today+30",
+              "days": 8,
+              "status": "approved"
+            },
+            "parents": [
+              "people:marco"
+            ]
+          }
+        ],
+        "holidays": [
+          {
+            "values": {
+              "holiday": "New Year's Day",
+              "date": "2027-01-01"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "onboarding",
@@ -3632,7 +4823,53 @@
             "newHires"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "newHires": [
+          {
+            "values": {
+              "fullName": "Lea Schmidt",
+              "role": "Product manager",
+              "startDate": "@today+7",
+              "buddy": "Marc Dubois"
+            },
+            "ref": "lea"
+          }
+        ],
+        "steps": [
+          {
+            "values": {
+              "step": "Create the accounts",
+              "responsible": "IT",
+              "dueDate": "@today+5"
+            },
+            "parents": [
+              "newHires:lea"
+            ]
+          },
+          {
+            "values": {
+              "step": "Welcome lunch",
+              "responsible": "Team",
+              "dueDate": "@today+7"
+            },
+            "parents": [
+              "newHires:lea"
+            ]
+          }
+        ],
+        "equipment": [
+          {
+            "values": {
+              "item": "Laptop",
+              "ready": true
+            },
+            "parents": [
+              "newHires:lea"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "habit-tracker",
@@ -3727,7 +4964,60 @@
             "habits"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "areas": [
+          {
+            "values": {
+              "area": "Health"
+            },
+            "ref": "health"
+          }
+        ],
+        "habits": [
+          {
+            "values": {
+              "habit": "Walk 8,000 steps",
+              "frequency": "daily",
+              "why": "More energy in the afternoon."
+            },
+            "ref": "walk",
+            "parents": [
+              "areas:health"
+            ]
+          },
+          {
+            "values": {
+              "habit": "No phone after 10 pm",
+              "frequency": "daily"
+            },
+            "parents": [
+              "areas:health"
+            ]
+          }
+        ],
+        "log": [
+          {
+            "values": {
+              "date": "@today-1",
+              "done": true
+            },
+            "parents": [
+              "habits:walk"
+            ]
+          },
+          {
+            "values": {
+              "date": "@today",
+              "done": false,
+              "notes": "Rainy day."
+            },
+            "parents": [
+              "habits:walk"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "journal",
@@ -3830,7 +5120,39 @@
             "places"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "people": [
+          {
+            "values": {
+              "name": "Grandma Lucia"
+            },
+            "ref": "nonna"
+          }
+        ],
+        "places": [
+          {
+            "values": {
+              "place": "Lake Como"
+            },
+            "ref": "lake"
+          }
+        ],
+        "entries": [
+          {
+            "values": {
+              "title": "A Sunday at the lake",
+              "date": "@today-2",
+              "mood": "great",
+              "entry": "We took the boat to Bellagio and Grandma told stories about her childhood."
+            },
+            "parents": [
+              "people:nonna",
+              "places:lake"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "personal-goals",
@@ -3963,7 +5285,64 @@
             "goals"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "areas": [
+          {
+            "values": {
+              "area": "Health",
+              "vision": "Feel fit and rested."
+            },
+            "ref": "health"
+          }
+        ],
+        "goals": [
+          {
+            "values": {
+              "goal": "Run a half marathon",
+              "targetDate": "@today+120",
+              "status": "inProgress",
+              "whyItMatters": "To prove I can do it."
+            },
+            "ref": "marathon",
+            "parents": [
+              "areas:health"
+            ]
+          }
+        ],
+        "milestones": [
+          {
+            "values": {
+              "milestone": "Run 10 km without stopping",
+              "dueDate": "@today+30",
+              "done": true
+            },
+            "parents": [
+              "goals:marathon"
+            ]
+          },
+          {
+            "values": {
+              "milestone": "Run 16 km",
+              "dueDate": "@today+75"
+            },
+            "parents": [
+              "goals:marathon"
+            ]
+          }
+        ],
+        "progress": [
+          {
+            "values": {
+              "date": "@today-1",
+              "whatIDid": "Interval training, 6 km."
+            },
+            "parents": [
+              "goals:marathon"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "address-book",
@@ -4082,7 +5461,59 @@
             "contacts"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "groups": [
+          {
+            "values": {
+              "group": "Friends"
+            },
+            "ref": "friends"
+          },
+          {
+            "values": {
+              "group": "Family"
+            },
+            "ref": "family"
+          }
+        ],
+        "contacts": [
+          {
+            "values": {
+              "fullName": "Giulia Verdi",
+              "phone": "+39 333 9876543",
+              "email": "giulia@example.com",
+              "birthday": "1990-05-14"
+            },
+            "ref": "giulia",
+            "parents": [
+              "groups:friends"
+            ]
+          },
+          {
+            "values": {
+              "fullName": "Uncle Franco",
+              "phone": "+39 02 1234567",
+              "birthday": "1958-11-02"
+            },
+            "parents": [
+              "groups:family"
+            ]
+          }
+        ],
+        "interactions": [
+          {
+            "values": {
+              "what": "Coffee in town",
+              "date": "@today-10",
+              "type": "meeting"
+            },
+            "parents": [
+              "contacts:giulia"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "gift-ideas",
@@ -4190,7 +5621,55 @@
             "occasions"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "people": [
+          {
+            "values": {
+              "name": "Sara",
+              "interests": "Climbing, sci-fi books, coffee",
+              "sizes": "M"
+            },
+            "ref": "sara"
+          }
+        ],
+        "occasions": [
+          {
+            "values": {
+              "occasion": "Birthday",
+              "date": "@today+25",
+              "budget": 60
+            },
+            "ref": "bday",
+            "parents": [
+              "people:sara"
+            ]
+          }
+        ],
+        "ideas": [
+          {
+            "values": {
+              "gift": "Project Hail Mary by Andy Weir",
+              "price": 18,
+              "bought": true
+            },
+            "parents": [
+              "people:sara",
+              "occasions:bday"
+            ]
+          },
+          {
+            "values": {
+              "gift": "Bouldering day pass",
+              "price": 25
+            },
+            "parents": [
+              "people:sara",
+              "occasions:bday"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "travel-planner",
@@ -4439,7 +5918,101 @@
             "trips"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "trips": [
+          {
+            "values": {
+              "destination": "Lisbon",
+              "from": "@today+30",
+              "to": "@today+35",
+              "budget": 1200,
+              "notes": "Long weekend with friends."
+            },
+            "ref": "lisbon"
+          }
+        ],
+        "places": [
+          {
+            "values": {
+              "place": "Belém Tower",
+              "type": "sight",
+              "link": "https://www.visitlisboa.com"
+            },
+            "ref": "belem",
+            "parents": [
+              "trips:lisbon"
+            ]
+          },
+          {
+            "values": {
+              "place": "Pastéis de Belém",
+              "type": "restaurant"
+            },
+            "ref": "pasteis",
+            "parents": [
+              "trips:lisbon"
+            ]
+          }
+        ],
+        "itinerary": [
+          {
+            "values": {
+              "activity": "Flight to Lisbon",
+              "when": "@today+30",
+              "type": "transport",
+              "bookingReference": "TP1234"
+            },
+            "parents": [
+              "trips:lisbon"
+            ]
+          },
+          {
+            "values": {
+              "activity": "Morning in Belém",
+              "when": "@today+31",
+              "type": "visit"
+            },
+            "parents": [
+              "trips:lisbon",
+              "places:belem",
+              "places:pasteis"
+            ]
+          }
+        ],
+        "expenses": [
+          {
+            "values": {
+              "expense": "Flights",
+              "date": "@today-5",
+              "amount": 280,
+              "category": "transport"
+            },
+            "parents": [
+              "trips:lisbon"
+            ]
+          }
+        ],
+        "packing": [
+          {
+            "values": {
+              "item": "Passport",
+              "packed": false
+            },
+            "parents": [
+              "trips:lisbon"
+            ]
+          },
+          {
+            "values": {
+              "item": "Comfortable shoes"
+            },
+            "parents": [
+              "trips:lisbon"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "personal-budget",
@@ -4566,7 +6139,87 @@
             "categories"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "accounts": [
+          {
+            "values": {
+              "account": "Checking account",
+              "type": "bankAccount",
+              "openingBalance": 2400
+            },
+            "ref": "bank"
+          },
+          {
+            "values": {
+              "account": "Credit card",
+              "type": "creditCard",
+              "openingBalance": 0
+            },
+            "ref": "card"
+          }
+        ],
+        "categories": [
+          {
+            "values": {
+              "category": "Salary",
+              "type": "income"
+            },
+            "ref": "salary"
+          },
+          {
+            "values": {
+              "category": "Groceries",
+              "type": "expense",
+              "monthlyBudget": 400
+            },
+            "ref": "food"
+          },
+          {
+            "values": {
+              "category": "Rent",
+              "type": "expense",
+              "monthlyBudget": 900
+            },
+            "ref": "rent"
+          }
+        ],
+        "transactions": [
+          {
+            "values": {
+              "description": "October salary",
+              "date": "@today-10",
+              "amount": 2800
+            },
+            "parents": [
+              "accounts:bank",
+              "categories:salary"
+            ]
+          },
+          {
+            "values": {
+              "description": "Rent",
+              "date": "@today-9",
+              "amount": 900
+            },
+            "parents": [
+              "accounts:bank",
+              "categories:rent"
+            ]
+          },
+          {
+            "values": {
+              "description": "Supermarket",
+              "date": "@today-2",
+              "amount": 64.3
+            },
+            "parents": [
+              "accounts:card",
+              "categories:food"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "subscriptions",
@@ -4681,7 +6334,56 @@
             "subscriptions"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "paymentMethods": [
+          {
+            "values": {
+              "method": "Visa ending 4242",
+              "expiry": "2028-09-30"
+            },
+            "ref": "visa"
+          }
+        ],
+        "subscriptions": [
+          {
+            "values": {
+              "service": "Netflix",
+              "cost": 12.99,
+              "billing": "monthly",
+              "nextRenewal": "@today+9",
+              "active": true
+            },
+            "ref": "netflix",
+            "parents": [
+              "paymentMethods:visa"
+            ]
+          },
+          {
+            "values": {
+              "service": "Cloud storage 2 TB",
+              "cost": 99,
+              "billing": "yearly",
+              "nextRenewal": "@today+140",
+              "active": true
+            },
+            "parents": [
+              "paymentMethods:visa"
+            ]
+          }
+        ],
+        "payments": [
+          {
+            "values": {
+              "date": "@today-21",
+              "amount": 12.99
+            },
+            "parents": [
+              "subscriptions:netflix"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "savings-goals",
@@ -4769,7 +6471,50 @@
             "accounts"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "accounts": [
+          {
+            "values": {
+              "account": "Savings account",
+              "bank": "Online Bank"
+            },
+            "ref": "savings"
+          }
+        ],
+        "goals": [
+          {
+            "values": {
+              "goal": "Trip to Japan",
+              "targetAmount": 4000,
+              "targetDate": "@today+300"
+            },
+            "ref": "japan"
+          }
+        ],
+        "deposits": [
+          {
+            "values": {
+              "date": "@today-30",
+              "amount": 300
+            },
+            "parents": [
+              "goals:japan",
+              "accounts:savings"
+            ]
+          },
+          {
+            "values": {
+              "date": "@today",
+              "amount": 300
+            },
+            "parents": [
+              "goals:japan",
+              "accounts:savings"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "recipes",
@@ -4963,7 +6708,149 @@
             "recipes"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "cuisines": [
+          {
+            "values": {
+              "cuisine": "American"
+            },
+            "ref": "american"
+          },
+          {
+            "values": {
+              "cuisine": "Italian"
+            },
+            "ref": "italian"
+          }
+        ],
+        "recipes": [
+          {
+            "values": {
+              "recipe": "Fudgy chocolate brownies",
+              "course": "dessert",
+              "servings": 12,
+              "minutes": 45,
+              "difficulty": "easy",
+              "steps": "Melt butter and chocolate.\nWhisk in sugar, then eggs and vanilla.\nFold in flour and cocoa.\nBake at 175 °C for 25 minutes."
+            },
+            "ref": "brownies",
+            "parents": [
+              "cuisines:american"
+            ]
+          },
+          {
+            "values": {
+              "recipe": "Spaghetti carbonara",
+              "course": "main",
+              "servings": 4,
+              "minutes": 20,
+              "difficulty": "medium",
+              "steps": "Brown the guanciale.\nMix yolks with pecorino and pepper.\nToss the hot pasta off the heat with the eggs and a splash of cooking water."
+            },
+            "ref": "carbonara",
+            "parents": [
+              "cuisines:italian"
+            ]
+          }
+        ],
+        "ingredients": [
+          {
+            "values": {
+              "ingredient": "Dark chocolate",
+              "quantity": "200 g"
+            },
+            "parents": [
+              "recipes:brownies"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Butter",
+              "quantity": "170 g"
+            },
+            "parents": [
+              "recipes:brownies"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Sugar",
+              "quantity": "250 g"
+            },
+            "parents": [
+              "recipes:brownies"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Eggs",
+              "quantity": "3"
+            },
+            "parents": [
+              "recipes:brownies"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Walnuts",
+              "quantity": "80 g",
+              "optional": true
+            },
+            "parents": [
+              "recipes:brownies"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Spaghetti",
+              "quantity": "400 g"
+            },
+            "parents": [
+              "recipes:carbonara"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Guanciale",
+              "quantity": "150 g"
+            },
+            "parents": [
+              "recipes:carbonara"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Egg yolks",
+              "quantity": "4"
+            },
+            "parents": [
+              "recipes:carbonara"
+            ]
+          },
+          {
+            "values": {
+              "ingredient": "Pecorino Romano",
+              "quantity": "60 g"
+            },
+            "parents": [
+              "recipes:carbonara"
+            ]
+          }
+        ],
+        "cookingLog": [
+          {
+            "values": {
+              "date": "@today-6",
+              "rating": "5",
+              "notes": "Took them out 3 minutes earlier: perfect."
+            },
+            "parents": [
+              "recipes:brownies"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "meal-planner",
@@ -5116,7 +7003,73 @@
             "meals"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "recipes": [
+          {
+            "values": {
+              "recipe": "Mushroom risotto",
+              "minutes": 35,
+              "ingredients": "Carnaroli rice\nMushrooms\nOnion\nParmesan\nVegetable stock"
+            },
+            "ref": "risotto"
+          },
+          {
+            "values": {
+              "recipe": "Greek salad",
+              "minutes": 10,
+              "ingredients": "Tomatoes\nCucumber\nFeta\nOlives\nRed onion"
+            },
+            "ref": "salad"
+          }
+        ],
+        "meals": [
+          {
+            "values": {
+              "dish": "Mushroom risotto",
+              "date": "@today+1",
+              "meal": "dinner"
+            },
+            "ref": "m1",
+            "parents": [
+              "recipes:risotto"
+            ]
+          },
+          {
+            "values": {
+              "dish": "Greek salad",
+              "date": "@today+2",
+              "meal": "lunch"
+            },
+            "ref": "m2",
+            "parents": [
+              "recipes:salad"
+            ]
+          }
+        ],
+        "shopping": [
+          {
+            "values": {
+              "item": "Mushrooms",
+              "quantity": "400 g",
+              "aisle": "produce"
+            },
+            "parents": [
+              "meals:m1"
+            ]
+          },
+          {
+            "values": {
+              "item": "Feta",
+              "quantity": "200 g",
+              "aisle": "dairy"
+            },
+            "parents": [
+              "meals:m2"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "home-maintenance",
@@ -5280,7 +7233,73 @@
             "contractors"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "rooms": [
+          {
+            "values": {
+              "room": "Kitchen"
+            },
+            "ref": "kitchen"
+          },
+          {
+            "values": {
+              "room": "Bathroom"
+            },
+            "ref": "bath"
+          }
+        ],
+        "appliances": [
+          {
+            "values": {
+              "appliance": "Dishwasher",
+              "brand": "Bosch",
+              "model": "SMS4HVI33E",
+              "purchaseDate": "@today-500",
+              "warrantyUntil": "@today+230"
+            },
+            "ref": "dish",
+            "parents": [
+              "rooms:kitchen"
+            ]
+          }
+        ],
+        "contractors": [
+          {
+            "values": {
+              "name": "Luca the plumber",
+              "trade": "Plumbing",
+              "phone": "+39 347 1112223"
+            },
+            "ref": "plumber"
+          }
+        ],
+        "tasks": [
+          {
+            "values": {
+              "task": "Clean the dishwasher filter",
+              "frequency": "monthly",
+              "nextDue": "@today+3"
+            },
+            "parents": [
+              "rooms:kitchen",
+              "appliances:dish"
+            ]
+          },
+          {
+            "values": {
+              "task": "Fix the dripping shower",
+              "frequency": "once",
+              "nextDue": "@today+7",
+              "cost": 80
+            },
+            "parents": [
+              "rooms:bath",
+              "contractors:plumber"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "plant-care",
@@ -5426,7 +7445,63 @@
             "plants"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "locations": [
+          {
+            "values": {
+              "location": "Living room window",
+              "light": "partialShade"
+            },
+            "ref": "living"
+          }
+        ],
+        "plants": [
+          {
+            "values": {
+              "plant": "Monstera",
+              "species": "Monstera deliciosa",
+              "watering": "weekly",
+              "notes": "Likes to dry out between waterings."
+            },
+            "ref": "monstera",
+            "parents": [
+              "locations:living"
+            ]
+          },
+          {
+            "values": {
+              "plant": "Snake plant",
+              "species": "Dracaena trifasciata",
+              "watering": "everyTwoWeeks"
+            },
+            "parents": [
+              "locations:living"
+            ]
+          }
+        ],
+        "care": [
+          {
+            "values": {
+              "date": "@today-3",
+              "action": "watered"
+            },
+            "parents": [
+              "plants:monstera"
+            ]
+          },
+          {
+            "values": {
+              "date": "@today-40",
+              "action": "repotted",
+              "notes": "Moved to a 24 cm pot."
+            },
+            "parents": [
+              "plants:monstera"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "pet-care",
@@ -5631,7 +7706,72 @@
             "pets"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "vets": [
+          {
+            "values": {
+              "name": "Dr. Elena Galli",
+              "clinic": "City Vet Clinic",
+              "phone": "+39 02 7654321"
+            },
+            "ref": "vet"
+          }
+        ],
+        "pets": [
+          {
+            "values": {
+              "name": "Luna",
+              "species": "dog",
+              "breed": "Border Collie",
+              "birthDate": "2021-04-10",
+              "microchip": "380260000123456"
+            },
+            "ref": "luna",
+            "parents": [
+              "vets:vet"
+            ]
+          }
+        ],
+        "visits": [
+          {
+            "values": {
+              "reason": "Yearly check-up",
+              "date": "@today-60",
+              "cost": 55,
+              "outcome": "Healthy, slightly overweight."
+            },
+            "parents": [
+              "pets:luna",
+              "vets:vet"
+            ]
+          }
+        ],
+        "vaccinations": [
+          {
+            "values": {
+              "vaccine": "Rabies",
+              "date": "@today-60",
+              "nextDue": "@today+305"
+            },
+            "parents": [
+              "pets:luna"
+            ]
+          }
+        ],
+        "medications": [
+          {
+            "values": {
+              "medication": "Tick and flea tablet",
+              "dosage": "1 every 3 months",
+              "from": "@today-20"
+            },
+            "parents": [
+              "pets:luna"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "car-maintenance",
@@ -5784,7 +7924,57 @@
             "vehicles"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "garages": [
+          {
+            "values": {
+              "garage": "Garage Bianchi",
+              "phone": "+39 011 555777"
+            },
+            "ref": "garage"
+          }
+        ],
+        "vehicles": [
+          {
+            "values": {
+              "vehicle": "Volkswagen Golf",
+              "plate": "AB123CD",
+              "year": 2019,
+              "insuranceExpiry": "@today+90",
+              "inspectionDue": "@today+200"
+            },
+            "ref": "golf"
+          }
+        ],
+        "services": [
+          {
+            "values": {
+              "service": "Oil and filters",
+              "date": "@today-45",
+              "mileage": 62000,
+              "cost": 180
+            },
+            "parents": [
+              "vehicles:golf",
+              "garages:garage"
+            ]
+          }
+        ],
+        "fuel": [
+          {
+            "values": {
+              "date": "@today-4",
+              "liters": 42,
+              "cost": 74.5,
+              "mileage": 63150
+            },
+            "parents": [
+              "vehicles:golf"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "workout-log",
@@ -5966,7 +8156,81 @@
             "exercises"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "programs": [
+          {
+            "values": {
+              "program": "Beginner strength",
+              "goal": "strength",
+              "startDate": "@today-21"
+            },
+            "ref": "strength"
+          }
+        ],
+        "exercises": [
+          {
+            "values": {
+              "exercise": "Back squat",
+              "muscleGroup": "legs"
+            },
+            "ref": "squat"
+          },
+          {
+            "values": {
+              "exercise": "Bench press",
+              "muscleGroup": "chest"
+            },
+            "ref": "bench"
+          }
+        ],
+        "workouts": [
+          {
+            "values": {
+              "workout": "Day A",
+              "date": "@today-1",
+              "minutes": 55,
+              "notes": "Felt strong."
+            },
+            "ref": "w1",
+            "parents": [
+              "programs:strength"
+            ]
+          }
+        ],
+        "sets": [
+          {
+            "values": {
+              "reps": 5,
+              "weight": 80
+            },
+            "parents": [
+              "workouts:w1",
+              "exercises:squat"
+            ]
+          },
+          {
+            "values": {
+              "reps": 5,
+              "weight": 82.5
+            },
+            "parents": [
+              "workouts:w1",
+              "exercises:squat"
+            ]
+          },
+          {
+            "values": {
+              "reps": 5,
+              "weight": 60
+            },
+            "parents": [
+              "workouts:w1",
+              "exercises:bench"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "health-log",
@@ -6143,7 +8407,58 @@
             "visits"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "family": [
+          {
+            "values": {
+              "name": "Leo",
+              "birthDate": "2018-03-22",
+              "allergies": "Pollen"
+            },
+            "ref": "leo"
+          }
+        ],
+        "doctors": [
+          {
+            "values": {
+              "name": "Dr. Anna Weiss",
+              "specialty": "Pediatrician",
+              "phone": "+39 02 3334445"
+            },
+            "ref": "ped"
+          }
+        ],
+        "visits": [
+          {
+            "values": {
+              "reason": "Seasonal allergy check",
+              "date": "@today-14",
+              "outcome": "Antihistamine during spring.",
+              "followUp": "@today+160"
+            },
+            "ref": "v1",
+            "parents": [
+              "family:leo",
+              "doctors:ped"
+            ]
+          }
+        ],
+        "medications": [
+          {
+            "values": {
+              "medication": "Cetirizine drops",
+              "dosage": "5 drops a day",
+              "from": "@today-14",
+              "to": "@today+30"
+            },
+            "parents": [
+              "family:leo",
+              "visits:v1"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "course-planner",
@@ -6321,7 +8636,70 @@
             "assignments"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "semesters": [
+          {
+            "values": {
+              "semester": "Fall 2026",
+              "from": "@today-30",
+              "to": "@today+90"
+            },
+            "ref": "fall"
+          }
+        ],
+        "courses": [
+          {
+            "values": {
+              "course": "Statistics I",
+              "teacher": "Prof. Moretti",
+              "credits": 6
+            },
+            "ref": "stats",
+            "parents": [
+              "semesters:fall"
+            ]
+          }
+        ],
+        "assignments": [
+          {
+            "values": {
+              "title": "Problem set 3",
+              "type": "assignment",
+              "dueDate": "@today+5",
+              "status": "inProgress"
+            },
+            "ref": "hw3",
+            "parents": [
+              "courses:stats"
+            ]
+          },
+          {
+            "values": {
+              "title": "Midterm",
+              "type": "exam",
+              "dueDate": "@today+25",
+              "status": "toDo"
+            },
+            "parents": [
+              "courses:stats"
+            ]
+          }
+        ],
+        "study": [
+          {
+            "values": {
+              "date": "@today-1",
+              "hours": 2,
+              "topics": "Confidence intervals"
+            },
+            "parents": [
+              "courses:stats",
+              "assignments:hw3"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "reading-list",
@@ -6476,7 +8854,86 @@
             "books"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "authors": [
+          {
+            "values": {
+              "name": "Michael Crichton",
+              "country": "United States"
+            },
+            "ref": "crichton"
+          },
+          {
+            "values": {
+              "name": "Elena Ferrante",
+              "country": "Italy"
+            },
+            "ref": "ferrante"
+          }
+        ],
+        "shelves": [
+          {
+            "values": {
+              "shelf": "Favorites"
+            },
+            "ref": "fav"
+          },
+          {
+            "values": {
+              "shelf": "Summer reads"
+            },
+            "ref": "summer"
+          }
+        ],
+        "books": [
+          {
+            "values": {
+              "title": "Jurassic Park",
+              "status": "read",
+              "rating": "5",
+              "finishedOn": "@today-40",
+              "review": "Still the best techno-thriller."
+            },
+            "ref": "jurassic",
+            "parents": [
+              "authors:crichton",
+              "shelves:fav"
+            ]
+          },
+          {
+            "values": {
+              "title": "Sphere",
+              "status": "wantToRead"
+            },
+            "parents": [
+              "authors:crichton",
+              "shelves:summer"
+            ]
+          },
+          {
+            "values": {
+              "title": "My Brilliant Friend",
+              "status": "reading"
+            },
+            "parents": [
+              "authors:ferrante"
+            ]
+          }
+        ],
+        "quotes": [
+          {
+            "values": {
+              "quote": "Life, uh, finds a way.",
+              "page": 159,
+              "comment": "Ian Malcolm at his best."
+            },
+            "parents": [
+              "books:jurassic"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "research-literature",
@@ -6613,7 +9070,47 @@
             "papers"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "topics": [
+          {
+            "values": {
+              "topic": "Language models in education",
+              "researchQuestion": "Do AI tutors improve learning outcomes?"
+            },
+            "ref": "llm"
+          }
+        ],
+        "papers": [
+          {
+            "values": {
+              "title": "Attention Is All You Need",
+              "authors": "Vaswani et al.",
+              "year": 2017,
+              "journalOrVenue": "NeurIPS",
+              "link": "https://arxiv.org/abs/1706.03762",
+              "status": "read",
+              "keyFindings": "The Transformer architecture, based only on attention."
+            },
+            "ref": "p1",
+            "parents": [
+              "topics:llm"
+            ]
+          }
+        ],
+        "notes": [
+          {
+            "values": {
+              "note": "Multi-head attention",
+              "page": 4,
+              "details": "Lets the model attend to different positions at once."
+            },
+            "parents": [
+              "papers:p1"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "class-gradebook",
@@ -6749,7 +9246,75 @@
             "assessments"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "classes": [
+          {
+            "values": {
+              "class": "3B",
+              "subject": "Mathematics",
+              "schoolYear": "2026/27"
+            },
+            "ref": "3b"
+          }
+        ],
+        "students": [
+          {
+            "values": {
+              "fullName": "Alice Conti",
+              "parentEmail": "conti.family@example.com"
+            },
+            "ref": "alice",
+            "parents": [
+              "classes:3b"
+            ]
+          },
+          {
+            "values": {
+              "fullName": "Bruno Esposito"
+            },
+            "ref": "bruno",
+            "parents": [
+              "classes:3b"
+            ]
+          }
+        ],
+        "assessments": [
+          {
+            "values": {
+              "assessment": "Fractions test",
+              "date": "@today-7",
+              "type": "test"
+            },
+            "ref": "fractions",
+            "parents": [
+              "classes:3b"
+            ]
+          }
+        ],
+        "grades": [
+          {
+            "values": {
+              "grade": 8.5,
+              "comments": "Very good"
+            },
+            "parents": [
+              "students:alice",
+              "assessments:fractions"
+            ]
+          },
+          {
+            "values": {
+              "grade": 6,
+              "comments": "Review equivalent fractions"
+            },
+            "parents": [
+              "students:bruno",
+              "assessments:fractions"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "watchlist",
@@ -6904,7 +9469,73 @@
             "titles"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "genres": [
+          {
+            "values": {
+              "genre": "Science fiction"
+            },
+            "ref": "scifi"
+          },
+          {
+            "values": {
+              "genre": "Drama"
+            },
+            "ref": "drama"
+          }
+        ],
+        "titles": [
+          {
+            "values": {
+              "title": "Severance",
+              "type": "series",
+              "status": "watching",
+              "whereToWatch": "Apple TV+",
+              "rating": "5"
+            },
+            "ref": "severance",
+            "parents": [
+              "genres:scifi",
+              "genres:drama"
+            ]
+          },
+          {
+            "values": {
+              "title": "Arrival",
+              "type": "movie",
+              "status": "watched",
+              "rating": "5"
+            },
+            "parents": [
+              "genres:scifi"
+            ]
+          }
+        ],
+        "seasons": [
+          {
+            "values": {
+              "season": "Season 1",
+              "episodes": 9,
+              "episodesWatched": 9,
+              "finished": true
+            },
+            "parents": [
+              "titles:severance"
+            ]
+          },
+          {
+            "values": {
+              "season": "Season 2",
+              "episodes": 10,
+              "episodesWatched": 4
+            },
+            "parents": [
+              "titles:severance"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "collection",
@@ -7069,7 +9700,57 @@
             "categories"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "categories": [
+          {
+            "values": {
+              "category": "Vinyl records"
+            },
+            "ref": "vinyl"
+          }
+        ],
+        "items": [
+          {
+            "values": {
+              "name": "Miles Davis – Kind of Blue",
+              "year": 1959,
+              "condition": "excellent",
+              "purchasePrice": 45,
+              "acquiredOn": "@today-200",
+              "notes": "2015 reissue."
+            },
+            "ref": "kob",
+            "parents": [
+              "categories:vinyl"
+            ]
+          }
+        ],
+        "valuations": [
+          {
+            "values": {
+              "date": "@today-10",
+              "value": 60,
+              "source": "Discogs"
+            },
+            "parents": [
+              "items:kob"
+            ]
+          }
+        ],
+        "wishlist": [
+          {
+            "values": {
+              "item": "Pink Floyd – The Dark Side of the Moon (1973)",
+              "maxPrice": 150,
+              "priority": "high"
+            },
+            "parents": [
+              "categories:vinyl"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "writing-projects",
@@ -7301,7 +9982,73 @@
             "places"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "projects": [
+          {
+            "values": {
+              "title": "The Lighthouse Keeper",
+              "genre": "novel",
+              "targetWords": 80000,
+              "status": "drafting",
+              "synopsis": "A retired engineer finds letters hidden in a lighthouse."
+            },
+            "ref": "novel"
+          }
+        ],
+        "characters": [
+          {
+            "values": {
+              "name": "Ada Brennan",
+              "role": "protagonist",
+              "description": "Sixty-two, stubborn, curious."
+            },
+            "ref": "ada",
+            "parents": [
+              "projects:novel"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "values": {
+              "place": "Kilmore lighthouse",
+              "description": "Abandoned since 1987."
+            },
+            "ref": "lighthouse",
+            "parents": [
+              "projects:novel"
+            ]
+          }
+        ],
+        "chapters": [
+          {
+            "values": {
+              "title": "The key",
+              "number": 1,
+              "status": "draft"
+            },
+            "ref": "ch1",
+            "parents": [
+              "projects:novel"
+            ]
+          }
+        ],
+        "scenes": [
+          {
+            "values": {
+              "scene": "Ada climbs the stairs",
+              "words": 1200,
+              "text": "The iron steps rang under her boots."
+            },
+            "parents": [
+              "chapters:ch1",
+              "characters:ada",
+              "places:lighthouse"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "photo-shoots",
@@ -7494,7 +10241,72 @@
             "shoots"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "clients": [
+          {
+            "values": {
+              "name": "Bloom Florist",
+              "email": "hello@bloom.example"
+            },
+            "ref": "bloom"
+          }
+        ],
+        "locations": [
+          {
+            "values": {
+              "location": "Studio 4",
+              "notes": "Natural light until 3 pm."
+            },
+            "ref": "studio"
+          }
+        ],
+        "gear": [
+          {
+            "values": {
+              "item": "50mm f/1.8",
+              "type": "lens"
+            },
+            "ref": "50"
+          },
+          {
+            "values": {
+              "item": "Softbox 90 cm",
+              "type": "light"
+            },
+            "ref": "softbox"
+          }
+        ],
+        "shoots": [
+          {
+            "values": {
+              "shoot": "Spring bouquets catalog",
+              "date": "@today+8",
+              "status": "planned",
+              "price": 900,
+              "shotList": "20 bouquets, 3 angles each"
+            },
+            "ref": "spring",
+            "parents": [
+              "clients:bloom",
+              "locations:studio",
+              "gear:50",
+              "gear:softbox"
+            ]
+          }
+        ],
+        "deliverables": [
+          {
+            "values": {
+              "deliverable": "60 edited photos",
+              "dueDate": "@today+15"
+            },
+            "parents": [
+              "shoots:spring"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "event-planning",
@@ -7728,7 +10540,95 @@
             "vendors"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "events": [
+          {
+            "values": {
+              "event": "Anna & Luca's wedding",
+              "date": "@today+120",
+              "venue": "Villa Rosa",
+              "budget": 25000
+            },
+            "ref": "wedding"
+          }
+        ],
+        "vendors": [
+          {
+            "values": {
+              "vendor": "Gusto Catering",
+              "service": "catering",
+              "phone": "+39 055 1234567"
+            },
+            "ref": "cater"
+          },
+          {
+            "values": {
+              "vendor": "The Swingers",
+              "service": "music"
+            },
+            "ref": "band"
+          }
+        ],
+        "tasks": [
+          {
+            "values": {
+              "task": "Send the invitations",
+              "responsible": "Anna",
+              "dueDate": "@today+30"
+            },
+            "parents": [
+              "events:wedding"
+            ]
+          },
+          {
+            "values": {
+              "task": "Menu tasting",
+              "responsible": "Luca",
+              "dueDate": "@today+45"
+            },
+            "parents": [
+              "events:wedding"
+            ]
+          }
+        ],
+        "guests": [
+          {
+            "values": {
+              "name": "Giorgio Neri",
+              "email": "giorgio@example.com",
+              "rsvp": "attending",
+              "plusOnes": 1,
+              "dietaryNeeds": "Vegetarian"
+            },
+            "parents": [
+              "events:wedding"
+            ]
+          }
+        ],
+        "budget": [
+          {
+            "values": {
+              "item": "Dinner for 90",
+              "estimatedCost": 9000
+            },
+            "parents": [
+              "events:wedding",
+              "vendors:cater"
+            ]
+          },
+          {
+            "values": {
+              "item": "Live music",
+              "estimatedCost": 2500
+            },
+            "parents": [
+              "events:wedding",
+              "vendors:band"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "members",
@@ -7891,7 +10791,64 @@
             "members"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "types": [
+          {
+            "values": {
+              "type": "Standard",
+              "yearlyFee": 50
+            },
+            "ref": "standard"
+          }
+        ],
+        "members": [
+          {
+            "values": {
+              "fullName": "Pietro Galli",
+              "email": "pietro@example.com",
+              "memberSince": "2022-09-01"
+            },
+            "ref": "pietro",
+            "parents": [
+              "types:standard"
+            ]
+          }
+        ],
+        "fees": [
+          {
+            "values": {
+              "year": 2026,
+              "amount": 50,
+              "paidOn": "@today-60"
+            },
+            "parents": [
+              "members:pietro"
+            ]
+          }
+        ],
+        "events": [
+          {
+            "values": {
+              "event": "Yearly general assembly",
+              "date": "@today+20",
+              "place": "Club house"
+            },
+            "ref": "assembly"
+          }
+        ],
+        "attendance": [
+          {
+            "values": {
+              "status": "registered"
+            },
+            "parents": [
+              "events:assembly",
+              "members:pietro"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "volunteers",
@@ -8007,7 +10964,44 @@
             "volunteers"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "volunteers": [
+          {
+            "values": {
+              "fullName": "Nora Haddad",
+              "email": "nora@example.com",
+              "skills": "First aid, Arabic",
+              "availability": "Saturday mornings"
+            },
+            "ref": "nora"
+          }
+        ],
+        "activities": [
+          {
+            "values": {
+              "activity": "Food bank",
+              "coordinator": "Ivan",
+              "description": "Sorting and distributing food parcels."
+            },
+            "ref": "bank"
+          }
+        ],
+        "shifts": [
+          {
+            "values": {
+              "shift": "Saturday sorting",
+              "start": "@today+3",
+              "place": "Warehouse",
+              "confirmed": true
+            },
+            "parents": [
+              "activities:bank",
+              "volunteers:nora"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "donations",
@@ -8188,7 +11182,74 @@
             "donors"
           ]
         }
-      ]
+      ],
+      "samples": {
+        "campaigns": [
+          {
+            "values": {
+              "campaign": "Winter coats drive",
+              "goal": 10000,
+              "from": "@today-20",
+              "to": "@today+40"
+            },
+            "ref": "winter"
+          }
+        ],
+        "donors": [
+          {
+            "values": {
+              "name": "The Corner Bakery",
+              "email": "info@cornerbakery.example",
+              "type": "company"
+            },
+            "ref": "baker"
+          },
+          {
+            "values": {
+              "name": "Ruth Green",
+              "type": "individual"
+            },
+            "ref": "ruth"
+          }
+        ],
+        "donations": [
+          {
+            "values": {
+              "date": "@today-5",
+              "amount": 500,
+              "method": "bankTransfer",
+              "receiptSent": true
+            },
+            "parents": [
+              "donors:baker",
+              "campaigns:winter"
+            ]
+          },
+          {
+            "values": {
+              "date": "@today-2",
+              "amount": 50,
+              "method": "card"
+            },
+            "parents": [
+              "donors:ruth",
+              "campaigns:winter"
+            ]
+          }
+        ],
+        "thankYous": [
+          {
+            "values": {
+              "date": "@today-4",
+              "channel": "email",
+              "message": "Thank you for keeping our neighbors warm!"
+            },
+            "parents": [
+              "donors:baker"
+            ]
+          }
+        ]
+      }
     }
   ]
 }
